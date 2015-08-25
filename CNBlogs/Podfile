@@ -1,0 +1,19 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.0'
+
+inhibit_all_warnings!
+
+target 'CNBlogs' do
+
+pod 'AFNetworking'
+pod 'SDWebImage'
+pod 'MBProgressHUD'
+pod 'CocoaLumberjack'
+pod 'MJRefresh'
+
+end
+
+target 'CNBlogsTests' do
+
+end
+
