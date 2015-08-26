@@ -14,10 +14,15 @@
 		6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8BE1B8D56FA00ED4096 /* NewsModel.m */; };
 		6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8C11B8D581400ED4096 /* NewsContentModel.m */; };
 		6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8C41B8D589300ED4096 /* BloggerModel.m */; };
+		6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8C81B8D5FDF00ED4096 /* ProtocolUtil.m */; };
+		6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */; };
+		6B44B8D31B8DA7E900ED4096 /* BlogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8D21B8DA7E900ED4096 /* BlogTableViewCell.m */; };
+		6B44B8D61B8DB3E200ED4096 /* BlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */; };
+		6B44B8D91B8DBA8300ED4096 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8D81B8DBA8300ED4096 /* BlogContentModel.m */; };
+		6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
-		6BCE9B0B1B8C7C6F007AC2EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0A1B8C7C6F007AC2EC /* ViewController.m */; };
 		6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */; };
 		6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0F1B8C7C6F007AC2EC /* Images.xcassets */; };
 		6BCE9B1F1B8C7C6F007AC2EC /* CNBlogsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B1E1B8C7C6F007AC2EC /* CNBlogsTests.m */; };
@@ -49,14 +54,26 @@
 		6B44B8C11B8D581400ED4096 /* NewsContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsContentModel.m; path = Model/NewsContentModel.m; sourceTree = "<group>"; };
 		6B44B8C31B8D589300ED4096 /* BloggerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BloggerModel.h; path = Model/BloggerModel.h; sourceTree = "<group>"; };
 		6B44B8C41B8D589300ED4096 /* BloggerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BloggerModel.m; path = Model/BloggerModel.m; sourceTree = "<group>"; };
+		6B44B8C71B8D5FDF00ED4096 /* ProtocolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProtocolUtil.h; path = Server/ProtocolUtil.h; sourceTree = "<group>"; };
+		6B44B8C81B8D5FDF00ED4096 /* ProtocolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProtocolUtil.m; path = Server/ProtocolUtil.m; sourceTree = "<group>"; };
+		6B44B8CC1B8D9D1E00ED4096 /* BlogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTableViewController.h; sourceTree = "<group>"; };
+		6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTableViewController.m; sourceTree = "<group>"; };
+		6B44B8CF1B8D9F1A00ED4096 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		6B44B8D01B8D9FBF00ED4096 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		6B44B8D11B8DA7E900ED4096 /* BlogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogTableViewCell.h; sourceTree = "<group>"; };
+		6B44B8D21B8DA7E900ED4096 /* BlogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogTableViewCell.m; sourceTree = "<group>"; };
+		6B44B8D41B8DB3E200ED4096 /* BlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogViewController.h; sourceTree = "<group>"; };
+		6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogViewController.m; sourceTree = "<group>"; };
+		6B44B8D71B8DBA8300ED4096 /* BlogContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogContentModel.h; sourceTree = "<group>"; };
+		6B44B8D81B8DBA8300ED4096 /* BlogContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogContentModel.m; sourceTree = "<group>"; };
+		6B44B8DB1B8DBC7A00ED4096 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6BCE9B031B8C7C6F007AC2EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6BCE9B071B8C7C6F007AC2EC /* CNBlogs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CNBlogs.xcdatamodel; sourceTree = "<group>"; };
-		6BCE9B091B8C7C6F007AC2EC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6BCE9B0A1B8C7C6F007AC2EC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6BCE9B0D1B8C7C6F007AC2EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BCE9B0F1B8C7C6F007AC2EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6BCE9B181B8C7C6F007AC2EC /* CNBlogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNBlogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +114,7 @@
 		6B44B8AF1B8D52FA00ED4096 /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6B44B8C61B8D5F7300ED4096 /* Server */,
 				6B44B8B31B8D538100ED4096 /* Model */,
 			);
 			name = PersistenceLayer;
@@ -105,9 +123,9 @@
 		6B44B8B01B8D531000ED4096 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				6BCE9B091B8C7C6F007AC2EC /* ViewController.h */,
-				6BCE9B0A1B8C7C6F007AC2EC /* ViewController.m */,
 				6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */,
+				6B44B8CB1B8D9CD400ED4096 /* App */,
+				6B44B8CA1B8D9CB800ED4096 /* Blog */,
 			);
 			name = PresentationLayer;
 			sourceTree = "<group>";
@@ -128,6 +146,8 @@
 				6B44B8BB1B8D560D00ED4096 /* CommentModel.m */,
 				6B44B8B71B8D553500ED4096 /* BlogModel.h */,
 				6B44B8B81B8D553500ED4096 /* BlogModel.m */,
+				6B44B8D71B8DBA8300ED4096 /* BlogContentModel.h */,
+				6B44B8D81B8DBA8300ED4096 /* BlogContentModel.m */,
 				6B44B8C31B8D589300ED4096 /* BloggerModel.h */,
 				6B44B8C41B8D589300ED4096 /* BloggerModel.m */,
 				6B44B8BD1B8D56FA00ED4096 /* NewsModel.h */,
@@ -136,6 +156,45 @@
 				6B44B8C11B8D581400ED4096 /* NewsContentModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6B44B8C61B8D5F7300ED4096 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8C71B8D5FDF00ED4096 /* ProtocolUtil.h */,
+				6B44B8C81B8D5FDF00ED4096 /* ProtocolUtil.m */,
+			);
+			name = Server;
+			sourceTree = "<group>";
+		};
+		6B44B8CA1B8D9CB800ED4096 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8CC1B8D9D1E00ED4096 /* BlogTableViewController.h */,
+				6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */,
+				6B44B8D41B8DB3E200ED4096 /* BlogViewController.h */,
+				6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */,
+				6B44B8D11B8DA7E900ED4096 /* BlogTableViewCell.h */,
+				6B44B8D21B8DA7E900ED4096 /* BlogTableViewCell.m */,
+			);
+			name = Blog;
+			sourceTree = "<group>";
+		};
+		6B44B8CB1B8D9CD400ED4096 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		6B44B8DA1B8DBC5200ED4096 /* Conponent */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8CF1B8D9F1A00ED4096 /* Constant.h */,
+				6B44B8DB1B8DBC7A00ED4096 /* AppUtil.h */,
+				6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */,
+			);
+			name = Conponent;
 			sourceTree = "<group>";
 		};
 		6BCE9AF31B8C7C6F007AC2EC = {
@@ -164,6 +223,7 @@
 			children = (
 				6BCE9B031B8C7C6F007AC2EC /* AppDelegate.h */,
 				6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */,
+				6B44B8DA1B8DBC5200ED4096 /* Conponent */,
 				6B44B8B11B8D532A00ED4096 /* BusinessLogicLayer */,
 				6B44B8B01B8D531000ED4096 /* PresentationLayer */,
 				6B44B8AF1B8D52FA00ED4096 /* PersistenceLayer */,
@@ -179,6 +239,7 @@
 			children = (
 				6BCE9B001B8C7C6F007AC2EC /* Info.plist */,
 				6BCE9B011B8C7C6F007AC2EC /* main.m */,
+				6B44B8D01B8D9FBF00ED4096 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -342,17 +403,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B44B8D61B8DB3E200ED4096 /* BlogViewController.m in Sources */,
 				6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */,
+				6B44B8D31B8DA7E900ED4096 /* BlogTableViewCell.m in Sources */,
+				6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */,
+				6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */,
 				6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */,
 				6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */,
 				6B44B8AE1B8D504F00ED4096 /* README.md in Sources */,
+				6B44B8D91B8DBA8300ED4096 /* BlogContentModel.m in Sources */,
 				6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */,
-				6BCE9B0B1B8C7C6F007AC2EC /* ViewController.m in Sources */,
 				6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */,
 				6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */,
 				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
 				6B44B8B91B8D553500ED4096 /* BlogModel.m in Sources */,
 				6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */,
+				6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = CNBlogs/Prefix.pch;
 				INFOPLIST_FILE = CNBlogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,6 +555,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = CNBlogs/Prefix.pch;
 				INFOPLIST_FILE = CNBlogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

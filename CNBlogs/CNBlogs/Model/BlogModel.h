@@ -13,6 +13,7 @@
 
 @property (nonatomic, copy) NSNumber *identifier;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *summary;
 @property (nonatomic, copy) NSDate *published;
 @property (nonatomic, copy) NSDate *updated;
 @property (nonatomic, strong) AuthorModel *author;
