@@ -20,6 +20,8 @@
 		6B44B8D61B8DB3E200ED4096 /* BlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */; };
 		6B44B8D91B8DBA8300ED4096 /* BlogContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8D81B8DBA8300ED4096 /* BlogContentModel.m */; };
 		6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */; };
+		6B44B8E11B8DC10B00ED4096 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8E01B8DC10B00ED4096 /* NewsTableViewController.m */; };
+		6B44B8E41B8DC84200ED4096 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8E31B8DC84200ED4096 /* NewsTableViewCell.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -68,6 +70,10 @@
 		6B44B8D81B8DBA8300ED4096 /* BlogContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogContentModel.m; sourceTree = "<group>"; };
 		6B44B8DB1B8DBC7A00ED4096 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
 		6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		6B44B8DF1B8DC10B00ED4096 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		6B44B8E01B8DC10B00ED4096 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		6B44B8E21B8DC84200ED4096 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		6B44B8E31B8DC84200ED4096 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -126,6 +132,7 @@
 				6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */,
 				6B44B8CB1B8D9CD400ED4096 /* App */,
 				6B44B8CA1B8D9CB800ED4096 /* Blog */,
+				6B44B8DE1B8DC0E800ED4096 /* News */,
 			);
 			name = PresentationLayer;
 			sourceTree = "<group>";
@@ -172,10 +179,10 @@
 			children = (
 				6B44B8CC1B8D9D1E00ED4096 /* BlogTableViewController.h */,
 				6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */,
-				6B44B8D41B8DB3E200ED4096 /* BlogViewController.h */,
-				6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */,
 				6B44B8D11B8DA7E900ED4096 /* BlogTableViewCell.h */,
 				6B44B8D21B8DA7E900ED4096 /* BlogTableViewCell.m */,
+				6B44B8D41B8DB3E200ED4096 /* BlogViewController.h */,
+				6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */,
 			);
 			name = Blog;
 			sourceTree = "<group>";
@@ -195,6 +202,17 @@
 				6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */,
 			);
 			name = Conponent;
+			sourceTree = "<group>";
+		};
+		6B44B8DE1B8DC0E800ED4096 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8DF1B8DC10B00ED4096 /* NewsTableViewController.h */,
+				6B44B8E01B8DC10B00ED4096 /* NewsTableViewController.m */,
+				6B44B8E21B8DC84200ED4096 /* NewsTableViewCell.h */,
+				6B44B8E31B8DC84200ED4096 /* NewsTableViewCell.m */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 		6BCE9AF31B8C7C6F007AC2EC = {
@@ -414,8 +432,10 @@
 				6B44B8D91B8DBA8300ED4096 /* BlogContentModel.m in Sources */,
 				6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */,
 				6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */,
+				6B44B8E11B8DC10B00ED4096 /* NewsTableViewController.m in Sources */,
 				6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */,
 				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
+				6B44B8E41B8DC84200ED4096 /* NewsTableViewCell.m in Sources */,
 				6B44B8B91B8D553500ED4096 /* BlogModel.m in Sources */,
 				6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */,
 				6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "ProtocolUtil.h"
 #import "BlogModel.h"
 #import "BlogContentModel.h"
+#import "NewsModel.h"
 
 static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
@@ -68,7 +69,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         if (success) {
-            success(mappingResult.firstObject, nil);
+            success(mappingResult.firstObject, identifier);
         }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (failure) {
@@ -76,6 +77,33 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
         }
     }];
     [operation start];
+}
+
++ (void)getNewsListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
+    RKObjectMapping *responseMapping = [self newsModelMapping];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
+
+    NSString *path = [NSString stringWithFormat:@"%@news/recent/paged/%@/%@", protocolBaseUrl, index, count];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:path]];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        if (success) {
+            success(mappingResult.array, nil);
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+    [operation start];
+}
+
++ (RKObjectMapping *)newsModelMapping {
+    RKObjectMapping *newsMapping = [RKObjectMapping mappingForClass:[NewsModel class]];
+    [newsMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"published", @"updated.text": @"updated", @"link.href": @"link", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments", @"topic.text": @"topic", @"topicIcon.text": @"topicIcon", @"sourceName.text": @"sourceName"}];
+    return newsMapping;
 }
 
 @end
