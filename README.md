@@ -67,51 +67,88 @@
 数据结构
 
 1 博主－authorModel
+
 	名字：name
+	
 	主页：uri
+	
 	头像：avatar
 
 2 博客－blogModel
+
 	ID：identifier
+	
 	标题：title
+	
 	描述：summary
+	
 	发布时间：pubished
+	
 	更新时间：updated
+	
 	博主：author
+	
 	正文链接：link
+	
 	博客名称：blogapp
+	
 	赞数量：diggs
+	
 	浏览数量：views
+	
 	评论数量：comments
 
 3 博客内容－blogContent
 
 4 评论－commentModel
+
 	ID：identifier
+	
 	标题：title
+	
 	发布时间：published
+	
 	更新时间：updated
+	
 	博主：author
+	
 	内容：content
 
 5 新闻－newsModel
+
 	ID：identifier
+	
 	标题：title
+	
 	描述：summary
+	
 	发布时间：published
+	
 	更新时间：updated
+	
 	新闻链接：link
+	
 	赞数量：diggs
+	
 	浏览数量：views
+	
 	评论数量：comments
+	
 	主题：topic
+	
 	主题图标链接：topicIcon
+	
 	来源：sourceName
 
 6 新闻内容－newsConnentModel
+
 	内容：content
+	
 	插图：imageUrlArray
+	
 	上一条：prevNews
+	
 	下一条：nextNews
+	
 	评论数：commentCount
 
