@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AuthorModel.h"
 
 @interface CommentModel : NSObject
+
+@property (nonatomic, copy) NSNumber *identifier;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSDate *published;
+@property (nonatomic, copy) NSDate *updated;
+@property (nonatomic, strong) AuthorModel *author;
+@property (nonatomic, copy) NSString *content;
 
 @end

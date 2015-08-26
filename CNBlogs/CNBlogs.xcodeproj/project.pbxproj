@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B44B8AE1B8D504F00ED4096 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8AD1B8D504F00ED4096 /* README.md */; };
+		6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8B51B8D54B300ED4096 /* AuthorModel.m */; };
+		6B44B8B91B8D553500ED4096 /* BlogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8B81B8D553500ED4096 /* BlogModel.m */; };
+		6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8BB1B8D560D00ED4096 /* CommentModel.m */; };
+		6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8BE1B8D56FA00ED4096 /* NewsModel.m */; };
+		6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8C11B8D581400ED4096 /* NewsContentModel.m */; };
+		6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8C41B8D589300ED4096 /* BloggerModel.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -29,6 +36,19 @@
 
 /* Begin PBXFileReference section */
 		17F1A356B32BD71D4B936523 /* Pods-CNBlogs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlogs.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNBlogs/Pods-CNBlogs.release.xcconfig"; sourceTree = "<group>"; };
+		6B44B8AD1B8D504F00ED4096 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		6B44B8B41B8D54B300ED4096 /* AuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthorModel.h; path = Model/AuthorModel.h; sourceTree = "<group>"; };
+		6B44B8B51B8D54B300ED4096 /* AuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuthorModel.m; path = Model/AuthorModel.m; sourceTree = "<group>"; };
+		6B44B8B71B8D553500ED4096 /* BlogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlogModel.h; path = Model/BlogModel.h; sourceTree = "<group>"; };
+		6B44B8B81B8D553500ED4096 /* BlogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlogModel.m; path = Model/BlogModel.m; sourceTree = "<group>"; };
+		6B44B8BA1B8D560D00ED4096 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentModel.h; path = Model/CommentModel.h; sourceTree = "<group>"; };
+		6B44B8BB1B8D560D00ED4096 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentModel.m; path = Model/CommentModel.m; sourceTree = "<group>"; };
+		6B44B8BD1B8D56FA00ED4096 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsModel.h; path = Model/NewsModel.h; sourceTree = "<group>"; };
+		6B44B8BE1B8D56FA00ED4096 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsModel.m; path = Model/NewsModel.m; sourceTree = "<group>"; };
+		6B44B8C01B8D581400ED4096 /* NewsContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsContentModel.h; path = Model/NewsContentModel.h; sourceTree = "<group>"; };
+		6B44B8C11B8D581400ED4096 /* NewsContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsContentModel.m; path = Model/NewsContentModel.m; sourceTree = "<group>"; };
+		6B44B8C31B8D589300ED4096 /* BloggerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BloggerModel.h; path = Model/BloggerModel.h; sourceTree = "<group>"; };
+		6B44B8C41B8D589300ED4096 /* BloggerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BloggerModel.m; path = Model/BloggerModel.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -74,9 +94,54 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6B44B8AF1B8D52FA00ED4096 /* PersistenceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8B31B8D538100ED4096 /* Model */,
+			);
+			name = PersistenceLayer;
+			sourceTree = "<group>";
+		};
+		6B44B8B01B8D531000ED4096 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				6BCE9B091B8C7C6F007AC2EC /* ViewController.h */,
+				6BCE9B0A1B8C7C6F007AC2EC /* ViewController.m */,
+				6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */,
+			);
+			name = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		6B44B8B11B8D532A00ED4096 /* BusinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = BusinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		6B44B8B31B8D538100ED4096 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B44B8B41B8D54B300ED4096 /* AuthorModel.h */,
+				6B44B8B51B8D54B300ED4096 /* AuthorModel.m */,
+				6B44B8BA1B8D560D00ED4096 /* CommentModel.h */,
+				6B44B8BB1B8D560D00ED4096 /* CommentModel.m */,
+				6B44B8B71B8D553500ED4096 /* BlogModel.h */,
+				6B44B8B81B8D553500ED4096 /* BlogModel.m */,
+				6B44B8C31B8D589300ED4096 /* BloggerModel.h */,
+				6B44B8C41B8D589300ED4096 /* BloggerModel.m */,
+				6B44B8BD1B8D56FA00ED4096 /* NewsModel.h */,
+				6B44B8BE1B8D56FA00ED4096 /* NewsModel.m */,
+				6B44B8C01B8D581400ED4096 /* NewsContentModel.h */,
+				6B44B8C11B8D581400ED4096 /* NewsContentModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6BCE9AF31B8C7C6F007AC2EC = {
 			isa = PBXGroup;
 			children = (
+				6B44B8AD1B8D504F00ED4096 /* README.md */,
 				6BCE9AFE1B8C7C6F007AC2EC /* CNBlogs */,
 				6BCE9B1B1B8C7C6F007AC2EC /* CNBlogsTests */,
 				6BCE9AFD1B8C7C6F007AC2EC /* Products */,
@@ -99,9 +164,9 @@
 			children = (
 				6BCE9B031B8C7C6F007AC2EC /* AppDelegate.h */,
 				6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */,
-				6BCE9B091B8C7C6F007AC2EC /* ViewController.h */,
-				6BCE9B0A1B8C7C6F007AC2EC /* ViewController.m */,
-				6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */,
+				6B44B8B11B8D532A00ED4096 /* BusinessLogicLayer */,
+				6B44B8B01B8D531000ED4096 /* PresentationLayer */,
+				6B44B8AF1B8D52FA00ED4096 /* PersistenceLayer */,
 				6BCE9B0F1B8C7C6F007AC2EC /* Images.xcassets */,
 				6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */,
 				6BCE9AFF1B8C7C6F007AC2EC /* Supporting Files */,
@@ -277,9 +342,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */,
 				6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */,
 				6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */,
+				6B44B8AE1B8D504F00ED4096 /* README.md in Sources */,
+				6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */,
 				6BCE9B0B1B8C7C6F007AC2EC /* ViewController.m in Sources */,
+				6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */,
+				6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */,
+				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
+				6B44B8B91B8D553500ED4096 /* BlogModel.m in Sources */,
 				6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

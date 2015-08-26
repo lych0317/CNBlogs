@@ -10,4 +10,8 @@
 
 @interface AuthorModel : NSObject
 
+@property (nonatomic, copy) NSString *uri;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *avatar;
+
 @end
