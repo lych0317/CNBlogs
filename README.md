@@ -27,7 +27,7 @@
 
 4 排行－服务端
 
-	4.1 博客推荐：http://wcf.open.cnblogs.com/blog/bloggers/recommend/1/10
+	4.1 博主推荐：http://wcf.open.cnblogs.com/blog/bloggers/recommend/1/10
 	
 	4.2 48H阅读：http://wcf.open.cnblogs.com/blog/48HoursTopViewPosts/20
 	
@@ -66,7 +66,7 @@
 ======================================================================
 数据结构
 
-1 博主－authorModel
+1 作者－authorModel
 
 	名字：name
 	
@@ -86,7 +86,7 @@
 	
 	更新时间：updated
 	
-	博主：author
+	作者：author
 	
 	正文链接：link
 	
@@ -110,7 +110,7 @@
 	
 	更新时间：updated
 	
-	博主：author
+    作者：author
 	
 	内容：content
 
@@ -140,7 +140,7 @@
 	
 	来源：sourceName
 
-6 新闻内容－newsConnentModel
+6 新闻内容－newsContentModel
 
 	内容：content
 	
@@ -151,4 +151,22 @@
 	下一条：nextNews
 	
 	评论数：commentCount
+
+7 博主－bloggerModel
+    
+    ID：identifier
+    
+    标题：title
+
+    更新时间：updated
+
+    主页：link
+
+    博客名称：blogapp
+
+    头像：avatar
+
+    随笔数量：postcount
+
+
 
