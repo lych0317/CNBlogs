@@ -98,7 +98,9 @@
 	
 	评论数量：comments
 
-3 博客内容－blogContent
+3 博客内容－blogContentModel
+
+    内容：content
 
 4 评论－commentModel
 
