@@ -10,6 +10,7 @@
 #import "ProtocolUtil.h"
 #import "BloggerModel.h"
 #import "BloggerTableViewCell.h"
+#import "BloggerTableViewController.h"
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
 
@@ -83,16 +84,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BloggerModel *bloggerModel = self.bloggerModelArray[indexPath.row];
+    [self performSegueWithIdentifier:@"SearchToBloggerSegue" sender:bloggerModel];
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"SearchToBloggerSegue"]) {
+        BloggerTableViewController *viewController = segue.destinationViewController;
+        viewController.bloggerModel = sender;
+    }
 }
-*/
 
 @end
