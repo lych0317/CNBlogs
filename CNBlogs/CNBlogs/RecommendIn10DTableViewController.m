@@ -1,67 +1,47 @@
 //
-//  BlogTableViewController.m
+//  RecommendIn10DTableViewController.m
 //  CNBlogs
 //
-//  Created by 李远超 on 15/8/26.
+//  Created by 李远超 on 15/8/27.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "BlogTableViewController.h"
+#import "RecommendIn10DTableViewController.h"
 #import "ProtocolUtil.h"
 #import "BlogModel.h"
 #import "BlogTableViewCell.h"
 #import "BlogViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
-@interface BlogTableViewController ()
+@interface RecommendIn10DTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *blogModelArray;
-@property (nonatomic, assign) NSInteger pageIndex;
+@property (nonatomic, strong) NSArray *blogModelArray;
 
 @end
 
-@implementation BlogTableViewController
+@implementation RecommendIn10DTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = YES;
+    self.clearsSelectionOnViewWillAppear = NO;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
 
-    __weak BlogTableViewController *weakSelf = self;
+    __weak RecommendIn10DTableViewController *weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestBlogDataForHeader];
-    }];
-    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf requestBlogDataForFooter];
+        [weakSelf requestBlogData];
     }];
 
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestBlogDataForHeader {
-    self.pageIndex = 1;
-    self.blogModelArray = [NSMutableArray array];
-    [self.tableView reloadData];
-    [self requestBlogData];
-}
-
-- (void)requestBlogDataForFooter {
-    [self requestBlogData];
-}
-
 - (void)requestBlogData {
-    [ProtocolUtil getBlogListWithPageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
-        self.pageIndex++;
+    [ProtocolUtil getRecommendIn10DListWithCount:@(20) success:^(id data, id identifier) {
         [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-        NSArray *array = data;
-        [self.blogModelArray addObjectsFromArray:array];
-        self.tableView.footer.hidden = array.count < PageCount;
+        self.blogModelArray = data;
         [self.tableView reloadData];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
     }];
 }
 
@@ -92,19 +72,13 @@
 
 #pragma mark - Table view delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     BlogModel *model = self.blogModelArray[indexPath.row];
-    [self performSegueWithIdentifier:@"BlogListToContentSegue" sender:model];
-}
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"BlogListToContentSegue"]) {
-        BlogViewController *viewController = segue.destinationViewController;
-        viewController.blogModel = sender;
-    }
 }
 
 @end

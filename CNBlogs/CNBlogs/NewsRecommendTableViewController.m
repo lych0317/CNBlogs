@@ -1,25 +1,25 @@
 //
-//  NewsTableViewController.m
+//  NewsRecommendTableViewController.m
 //  CNBlogs
 //
-//  Created by 李远超 on 15/8/26.
+//  Created by 李远超 on 15/8/28.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "NewsTableViewController.h"
+#import "NewsRecommendTableViewController.h"
 #import "ProtocolUtil.h"
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
 #import <MJRefresh/MJRefresh.h>
 
-@interface NewsTableViewController ()
+@interface NewsRecommendTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *newsModelArray;
 @property (nonatomic, assign) NSInteger pageIndex;
 
 @end
 
-@implementation NewsTableViewController
+@implementation NewsRecommendTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,7 +27,7 @@
 
     [self.tableView registerNib:[UINib nibWithNibName:@"NewsTableViewCell" bundle:nil] forCellReuseIdentifier:@"NewsTableViewCell"];
 
-    __weak NewsTableViewController *weakSelf = self;
+    __weak NewsRecommendTableViewController *weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf requestNewsDataForHeader];
     }];
@@ -37,7 +37,6 @@
 
     [self.tableView.header beginRefreshing];
 }
-
 - (void)requestNewsDataForHeader {
     self.pageIndex = 1;
     self.newsModelArray = [NSMutableArray array];
@@ -50,7 +49,7 @@
 }
 
 - (void)requestNewsData {
-    [ProtocolUtil getNewsListWithPageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
+    [ProtocolUtil getNewsRecommendListWithPageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
         self.pageIndex++;
         [self.tableView.header endRefreshing];
         [self.tableView.footer endRefreshing];
@@ -89,9 +88,8 @@
     return [formatter stringFromDate:date];
 }
 
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
 
 @end
