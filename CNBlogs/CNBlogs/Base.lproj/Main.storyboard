@@ -68,7 +68,13 @@
                             <outlet property="delegate" destination="fUY-8B-fSM" id="Wd3-Fx-plH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="博客" id="AB8-q6-NFo"/>
+                    <navigationItem key="navigationItem" title="博客" id="AB8-q6-NFo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="RQ0-Or-0Ph">
+                            <connections>
+                                <segue destination="srp-YT-esl" kind="show" id="6A5-LK-sGu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="B9t-ui-kqL" kind="show" identifier="BlogListToContentSegue" id="XSF-dN-Yud"/>
                     </connections>
@@ -76,6 +82,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwX-Nc-w1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285" y="-2230"/>
+        </scene>
+        <!--搜索-->
+        <scene sceneID="deL-yS-e5K">
+            <objects>
+                <viewController title="搜索" hidesBottomBarWhenPushed="YES" id="srp-YT-esl" customClass="SearchBlogViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cx4-8y-Ya2"/>
+                        <viewControllerLayoutGuide type="bottom" id="eGE-kh-S1w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lb9-wi-1Cg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="搜索博主" translatesAutoresizingMaskIntoConstraints="NO" id="N9H-eH-ox3">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="srp-YT-esl" id="ZgM-A0-OGN"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-n4-kDp">
+                                <rect key="frame" x="0.0" y="116" width="600" height="435"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="srp-YT-esl" id="9z8-uj-YWi"/>
+                                    <outlet property="delegate" destination="srp-YT-esl" id="wZH-Vy-pZp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bNP-n4-kDp" firstAttribute="bottom" secondItem="eGE-kh-S1w" secondAttribute="top" id="0io-Km-leD"/>
+                            <constraint firstItem="N9H-eH-ox3" firstAttribute="top" secondItem="cx4-8y-Ya2" secondAttribute="bottom" constant="8" id="7Bg-1w-Iby"/>
+                            <constraint firstItem="N9H-eH-ox3" firstAttribute="leading" secondItem="Lb9-wi-1Cg" secondAttribute="leading" id="OdY-WR-qYR"/>
+                            <constraint firstAttribute="trailing" secondItem="N9H-eH-ox3" secondAttribute="trailing" id="b1q-ak-2YS"/>
+                            <constraint firstItem="bNP-n4-kDp" firstAttribute="leading" secondItem="N9H-eH-ox3" secondAttribute="leading" id="gWt-cn-rec"/>
+                            <constraint firstItem="bNP-n4-kDp" firstAttribute="trailing" secondItem="N9H-eH-ox3" secondAttribute="trailing" id="iNt-P6-lex"/>
+                            <constraint firstItem="bNP-n4-kDp" firstAttribute="top" secondItem="N9H-eH-ox3" secondAttribute="bottom" id="s1i-e9-kUl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="N9H-eH-ox3" id="iEm-Vl-q1I"/>
+                        <outlet property="searchDisplayController" destination="9j9-IH-vxw" id="OQU-P4-A8q"/>
+                        <outlet property="tableView" destination="bNP-n4-kDp" id="HoQ-TD-fCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="56o-Ji-9K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="9j9-IH-vxw">
+                    <connections>
+                        <outlet property="delegate" destination="srp-YT-esl" id="SJe-W2-x9p"/>
+                        <outlet property="searchContentsController" destination="srp-YT-esl" id="avc-5O-Lv6"/>
+                        <outlet property="searchResultsDataSource" destination="srp-YT-esl" id="k6B-Cg-KwM"/>
+                        <outlet property="searchResultsDelegate" destination="srp-YT-esl" id="uHs-80-lG3"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-2938"/>
         </scene>
         <!--内容-->
         <scene sceneID="hIW-C4-Xin">
