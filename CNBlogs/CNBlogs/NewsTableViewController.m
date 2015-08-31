@@ -10,6 +10,7 @@
 #import "ProtocolUtil.h"
 #import "NewsModel.h"
 #import "NewsTableViewCell.h"
+#import "NewsViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface NewsTableViewController ()
@@ -89,9 +90,21 @@
     return [formatter stringFromDate:date];
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NewsModel *model = self.newsModelArray[indexPath.row];
+    [self performSegueWithIdentifier:@"NewsToContentSegue" sender:model];
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"NewsToContentSegue"]) {
+        NewsViewController *viewController = segue.destinationViewController;
+        viewController.newsModel = sender;
+    }
 }
 
 @end

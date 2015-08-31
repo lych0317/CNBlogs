@@ -270,10 +270,46 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="新闻" id="HSR-KS-fxA"/>
+                    <connections>
+                        <segue destination="CqY-Pa-OLX" kind="show" identifier="NewsToContentSegue" id="8XS-UW-emw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxV-ah-5N0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285" y="-1409"/>
+        </scene>
+        <!--内容-->
+        <scene sceneID="9KD-XY-Dgs">
+            <objects>
+                <viewController title="内容" hidesBottomBarWhenPushed="YES" id="CqY-Pa-OLX" customClass="NewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Dv-2f-SmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="fKe-Lr-pjy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vF0-JF-ThC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUJ-kR-3A6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oUJ-kR-3A6" firstAttribute="leading" secondItem="vF0-JF-ThC" secondAttribute="leading" id="Bll-fC-MRi"/>
+                            <constraint firstItem="oUJ-kR-3A6" firstAttribute="top" secondItem="vF0-JF-ThC" secondAttribute="top" id="fBI-0U-bbh"/>
+                            <constraint firstAttribute="trailing" secondItem="oUJ-kR-3A6" secondAttribute="trailing" id="h0v-bX-ccl"/>
+                            <constraint firstAttribute="bottom" secondItem="oUJ-kR-3A6" secondAttribute="bottom" id="ouj-Hk-3jF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentWebView" destination="oUJ-kR-3A6" id="9uk-vt-FEt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ogn-69-fRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="-1409"/>
         </scene>
         <!--排行-->
         <scene sceneID="rzd-8b-ISb">

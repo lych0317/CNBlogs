@@ -10,6 +10,7 @@
 #import "BlogModel.h"
 #import "BlogContentModel.h"
 #import "NewsModel.h"
+#import "NewsContentModel.h"
 #import "BloggerModel.h"
 
 static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
@@ -147,6 +148,33 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     RKObjectMapping *newsMapping = [RKObjectMapping mappingForClass:[NewsModel class]];
     [newsMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"published", @"updated.text": @"updated", @"link.href": @"link", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments", @"topic.text": @"topic", @"topicIcon.text": @"topicIcon", @"sourceName.text": @"sourceName"}];
     return newsMapping;
+}
+
++ (void)getNewsContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/xml"];
+    RKObjectMapping *responseMapping = [self newsContentModelMapping];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"NewsBody" statusCodes:[self createStatusCodes]];
+
+    NSString *path = [NSString stringWithFormat:@"%@news/item/%@", protocolBaseUrl, identifier];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:path]];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        if (success) {
+            success(mappingResult.firstObject, nil);
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+    [operation start];
+}
+
++ (RKObjectMapping *)newsContentModelMapping {
+    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[NewsContentModel class]];
+    [mapping addAttributeMappingsFromDictionary:@{@"Title.text": @"title", @"SourceName.text": @"sourceName", @"SubmitDate.text": @"submitDate", @"Content.text": @"content", @"ImageUrl.text": @"imageUrl", @"PrevNews.text": @"prevNews", @"NextNews.text": @"nextNews", @"CommentCount.text": @"comments"}];
+    return mapping;
 }
 
 + (void)getBloggerRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {

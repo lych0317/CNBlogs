@@ -10,6 +10,9 @@
 
 @interface NewsContentModel : NSObject
 
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *sourceName;
+@property (nonatomic, copy) NSDate *submitDate;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSNumber *prevNews;
