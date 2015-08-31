@@ -77,17 +77,11 @@
     cell.titleLabel.text = model.title;
     cell.summaryLabel.text = model.summary;
     cell.sourceLabel.text = model.sourceName;
-    cell.publishedLabel.text = [self stringFromDate:model.published];
+    cell.publishedLabel.text = [model.published stringWithFormate:yyMMddHHmm];
     cell.diggLabel.text = [model.diggs stringValue];
     cell.viewLabel.text = [model.views stringValue];
     cell.commentLabel.text = [model.comments stringValue];
     return cell;
-}
-
-- (NSString *)stringFromDate:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yy-MM-dd HH:mm"];
-    return [formatter stringFromDate:date];
 }
 
 #pragma mark - Table view delegate

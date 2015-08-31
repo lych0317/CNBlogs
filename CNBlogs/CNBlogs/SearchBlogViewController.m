@@ -69,15 +69,9 @@
 
     }];
     cell.titleLabel.text = model.title;
-    cell.updatedLabel.text = [self stringFromDate:model.updated];
+    cell.updatedLabel.text = [model.updated stringWithFormate:yyMMddHHmm];
     cell.postCountLabel.text = [model.postCount stringValue];
     return cell;
-}
-
-- (NSString *)stringFromDate:(NSDate *)date {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yy-MM-dd HH:mm"];
-    return [formatter stringFromDate:date];
 }
 
 #pragma mark - UITableViewDelegate
