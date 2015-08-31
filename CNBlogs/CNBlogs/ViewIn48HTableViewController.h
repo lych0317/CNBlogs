@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class BlogModel, ViewIn48HTableViewController;
+
+typedef void(^ViewIn48HDidSelectBlogBlock)(ViewIn48HTableViewController *viewController, BlogModel *model);
+
 @interface ViewIn48HTableViewController : UITableViewController
+
+@property (nonatomic, copy) ViewIn48HDidSelectBlogBlock didSelectBlogBlock;
 
 @end

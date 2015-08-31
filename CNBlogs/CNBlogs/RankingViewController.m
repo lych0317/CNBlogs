@@ -12,6 +12,10 @@
 #import "RecommendIn10DTableViewController.h"
 #import "NewsRecommendTableViewController.h"
 
+#import "BloggerTableViewController.h"
+#import "BlogViewController.h"
+#import "NewsViewController.h"
+
 @interface RankingViewController ()
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
@@ -28,10 +32,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    __weak RankingViewController *weakSelf = self;
     self.bloggerViewController = [[BloggerRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.bloggerViewController.didSelectBloggerBlock = ^(BloggerRecommendTableViewController *viewController, BloggerModel *model) {
+        [weakSelf performSegueWithIdentifier:@"RankingToBloggerSegue" sender:model];
+    };
+
     self.viewIn48HViewController = [[ViewIn48HTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.viewIn48HViewController.didSelectBlogBlock = ^(ViewIn48HTableViewController *viewController, BlogModel *model) {
+        [weakSelf performSegueWithIdentifier:@"RankingToBlogSegue" sender:model];
+    };
+
     self.recommendIn10DViewController = [[RecommendIn10DTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.recommendIn10DViewController.didSelectBlogBlock = ^(RecommendIn10DTableViewController *viewController, BlogModel *model) {
+        [weakSelf performSegueWithIdentifier:@"RankingToBlogSegue" sender:model];
+    };
+
     self.newsViewController = [[NewsRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.newsViewController.didSelectNewsBlock = ^(NewsRecommendTableViewController *viewController, NewsModel *model) {
+        [weakSelf performSegueWithIdentifier:@"RankingToNewsSegue" sender:model];
+    };
 }
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -77,6 +97,16 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"RankingToBloggerSegue"]) {
+        BloggerTableViewController *viewController = segue.destinationViewController;
+        viewController.bloggerModel = sender;
+    } else if ([segue.identifier isEqualToString:@"RankingToBlogSegue"]) {
+        BlogViewController *viewController = segue.destinationViewController;
+        viewController.blogModel = sender;
+    } else if ([segue.identifier isEqualToString:@"RankingToNewsSegue"]) {
+        NewsViewController *viewController = segue.destinationViewController;
+        viewController.newsModel = sender;
+    }
 }
 
 @end

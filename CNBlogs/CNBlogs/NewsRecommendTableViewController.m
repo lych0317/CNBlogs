@@ -92,4 +92,14 @@
     return 100;
 }
 
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.didSelectNewsBlock) {
+        NewsModel *model = self.newsModelArray[indexPath.row];
+        self.didSelectNewsBlock(self, model);
+    }
+}
+
 @end

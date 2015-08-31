@@ -245,8 +245,6 @@
 				6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */,
 				6B2659EC1B90724600ABA509 /* SearchBlogViewController.h */,
 				6B2659ED1B90724600ABA509 /* SearchBlogViewController.m */,
-				6B2659EF1B9078AE00ABA509 /* BloggerTableViewController.h */,
-				6B2659F01B9078AE00ABA509 /* BloggerTableViewController.m */,
 			);
 			name = Blog;
 			sourceTree = "<group>";
@@ -269,6 +267,8 @@
 				6B44B8D51B8DB3E200ED4096 /* BlogViewController.m */,
 				6B5745D71B93FBCA009C1C54 /* NewsViewController.h */,
 				6B5745D81B93FBCA009C1C54 /* NewsViewController.m */,
+				6B2659EF1B9078AE00ABA509 /* BloggerTableViewController.h */,
+				6B2659F01B9078AE00ABA509 /* BloggerTableViewController.m */,
 			);
 			name = App;
 			sourceTree = "<group>";

@@ -309,7 +309,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogn-69-fRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1149" y="-1409"/>
+            <point key="canvasLocation" x="1791" y="-1409"/>
         </scene>
         <!--排行-->
         <scene sceneID="rzd-8b-ISb">
@@ -396,11 +396,14 @@
                     <connections>
                         <outlet property="collectionView" destination="FJg-RY-ytE" id="Xe7-uP-qcF"/>
                         <outlet property="segmentedControl" destination="Cvg-2l-nfK" id="OZF-lG-27V"/>
+                        <segue destination="B9t-ui-kqL" kind="show" identifier="RankingToBlogSegue" id="qvt-MF-bnj"/>
+                        <segue destination="CqY-Pa-OLX" kind="show" identifier="RankingToNewsSegue" id="ehI-Li-PNK"/>
+                        <segue destination="qyA-cA-eYi" kind="show" identifier="RankingToBloggerSegue" id="WLm-Wg-p4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLj-sd-BF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="-635"/>
+            <point key="canvasLocation" x="293" y="-635"/>
         </scene>
         <!--收藏-->
         <scene sceneID="oGX-xh-bVy">
@@ -486,6 +489,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Kez-o4-FF9"/>
+        <segue reference="ehI-Li-PNK"/>
+        <segue reference="WLm-Wg-p4g"/>
+        <segue reference="qvt-MF-bnj"/>
     </inferredMetricsTieBreakers>
 </document>

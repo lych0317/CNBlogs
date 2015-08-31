@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class BlogModel, RecommendIn10DTableViewController;
+
+typedef void(^RecommendIn10DDidSelectBlogBlock)(RecommendIn10DTableViewController *viewController, BlogModel *model);
+
 @interface RecommendIn10DTableViewController : UITableViewController
+
+@property (nonatomic, copy) RecommendIn10DDidSelectBlogBlock didSelectBlogBlock;
 
 @end

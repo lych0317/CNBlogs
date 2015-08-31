@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class BloggerModel, BloggerRecommendTableViewController;
+
+typedef void(^BloggerRecommendDidSelectBloggerBlock)(BloggerRecommendTableViewController *viewController, BloggerModel *model);
+
 @interface BloggerRecommendTableViewController : UITableViewController
+
+@property (nonatomic, copy) BloggerRecommendDidSelectBloggerBlock didSelectBloggerBlock;
 
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class NewsModel, NewsRecommendTableViewController;
+
+typedef void(^NewsRecommendDidSelectNewsBlock)(NewsRecommendTableViewController *viewController, NewsModel *model);
+
 @interface NewsRecommendTableViewController : UITableViewController
+
+@property (nonatomic, copy) NewsRecommendDidSelectNewsBlock didSelectNewsBlock;
 
 @end

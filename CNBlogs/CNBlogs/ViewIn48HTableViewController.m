@@ -78,7 +78,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BlogModel *model = self.blogModelArray[indexPath.row];
+    if (self.didSelectBlogBlock) {
+        BlogModel *model = self.blogModelArray[indexPath.row];
+        self.didSelectBlogBlock(self, model);
+    }
 }
 
 @end
