@@ -18,80 +18,35 @@
 
 @interface RankingViewController ()
 
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
-@property (nonatomic, strong) BloggerRecommendTableViewController *bloggerViewController;
-@property (nonatomic, strong) ViewIn48HTableViewController *viewIn48HViewController;
-@property (nonatomic, strong) RecommendIn10DTableViewController *recommendIn10DViewController;
-@property (nonatomic, strong) NewsRecommendTableViewController *newsViewController;
-
 @end
 
 @implementation RankingViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     __weak RankingViewController *weakSelf = self;
-    self.bloggerViewController = [[BloggerRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.bloggerViewController.didSelectBloggerBlock = ^(BloggerRecommendTableViewController *viewController, BloggerModel *model) {
+    BloggerRecommendTableViewController *bloggerViewController = [[BloggerRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    bloggerViewController.didSelectBloggerBlock = ^(BloggerRecommendTableViewController *viewController, BloggerModel *model) {
         [weakSelf performSegueWithIdentifier:@"RankingToBloggerSegue" sender:model];
     };
 
-    self.viewIn48HViewController = [[ViewIn48HTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.viewIn48HViewController.didSelectBlogBlock = ^(ViewIn48HTableViewController *viewController, BlogModel *model) {
+    ViewIn48HTableViewController *viewIn48HViewController = [[ViewIn48HTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    viewIn48HViewController.didSelectBlogBlock = ^(ViewIn48HTableViewController *viewController, BlogModel *model) {
         [weakSelf performSegueWithIdentifier:@"RankingToBlogSegue" sender:model];
     };
 
-    self.recommendIn10DViewController = [[RecommendIn10DTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.recommendIn10DViewController.didSelectBlogBlock = ^(RecommendIn10DTableViewController *viewController, BlogModel *model) {
+    RecommendIn10DTableViewController *recommendIn10DViewController = [[RecommendIn10DTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    recommendIn10DViewController.didSelectBlogBlock = ^(RecommendIn10DTableViewController *viewController, BlogModel *model) {
         [weakSelf performSegueWithIdentifier:@"RankingToBlogSegue" sender:model];
     };
 
-    self.newsViewController = [[NewsRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.newsViewController.didSelectNewsBlock = ^(NewsRecommendTableViewController *viewController, NewsModel *model) {
+    NewsRecommendTableViewController *newsViewController = [[NewsRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    newsViewController.didSelectNewsBlock = ^(NewsRecommendTableViewController *viewController, NewsModel *model) {
         [weakSelf performSegueWithIdentifier:@"RankingToNewsSegue" sender:model];
     };
-}
 
-- (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
-    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:sender.selectedSegmentIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
-}
-
-#pragma mark - UICollectionViewDataSource
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
-    UIViewController *viewController = nil;
-    if (indexPath.row == 0) {
-        viewController = self.bloggerViewController;
-    } else if (indexPath.row == 1) {
-        viewController = self.viewIn48HViewController;
-    } else if (indexPath.row == 2) {
-        viewController = self.recommendIn10DViewController;
-    } else if (indexPath.row == 3) {
-        viewController = self.newsViewController;
-    }
-    viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(collectionView.frame), CGRectGetHeight(collectionView.frame));
-    [cell.contentView addSubview:viewController.view];
-    return cell;
-}
-
-#pragma mark - UICollectionViewDelegateFlowLayout
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return collectionView.bounds.size;
-}
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    int index = scrollView.contentOffset.x / CGRectGetWidth(scrollView.frame);
-    [self.segmentedControl setSelectedSegmentIndex:index];
+    self.titleArray = @[NSLocalizedString(@"博主推荐", @""), NSLocalizedString(@"48H阅读", @""), NSLocalizedString(@"10D推荐", @""), NSLocalizedString(@"新闻推荐", @"")];
+    self.viewControllerArray = @[bloggerViewController, viewIn48HViewController, recommendIn10DViewController, newsViewController];
+    [super viewDidLoad];
 }
 
 #pragma mark - Navigation

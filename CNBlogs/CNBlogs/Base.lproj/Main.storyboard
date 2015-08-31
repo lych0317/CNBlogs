@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--博客园-->
@@ -340,62 +339,10 @@
                     <view key="view" contentMode="scaleToFill" id="BV7-Lr-pd5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Cvg-2l-nfK">
-                                <rect key="frame" x="16" y="72" width="568" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="FCr-mP-lVS"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="博主推荐"/>
-                                    <segment title="48H阅读"/>
-                                    <segment title="10D推荐"/>
-                                    <segment title="新闻推荐"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segmentedControlValueChanged:" destination="N5M-Oe-Sd3" eventType="valueChanged" id="wfa-Ez-SK3"/>
-                                </connections>
-                            </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FJg-RY-ytE">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="TPv-3R-v94">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="P5S-Go-w1t">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="N5M-Oe-Sd3" id="VJh-Se-dCW"/>
-                                    <outlet property="delegate" destination="N5M-Oe-Sd3" id="SZX-nv-bdn"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cvg-2l-nfK" secondAttribute="trailing" id="0ow-id-tlN"/>
-                            <constraint firstItem="Cvg-2l-nfK" firstAttribute="leading" secondItem="BV7-Lr-pd5" secondAttribute="leadingMargin" id="MFr-sb-T9f"/>
-                            <constraint firstItem="zTM-Lk-QYO" firstAttribute="top" secondItem="FJg-RY-ytE" secondAttribute="bottom" id="Rhp-DB-x7r"/>
-                            <constraint firstItem="FJg-RY-ytE" firstAttribute="leading" secondItem="BV7-Lr-pd5" secondAttribute="leading" id="YVl-u5-SKM"/>
-                            <constraint firstItem="FJg-RY-ytE" firstAttribute="top" secondItem="Cvg-2l-nfK" secondAttribute="bottom" constant="8" id="eIs-1M-bpF"/>
-                            <constraint firstItem="Cvg-2l-nfK" firstAttribute="top" secondItem="dMW-5g-ZZW" secondAttribute="bottom" constant="8" id="lcI-YE-mJ5"/>
-                            <constraint firstAttribute="trailing" secondItem="FJg-RY-ytE" secondAttribute="trailing" id="sel-ea-nPb"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="排行" id="YKT-sH-JF7"/>
                     <connections>
-                        <outlet property="collectionView" destination="FJg-RY-ytE" id="Xe7-uP-qcF"/>
-                        <outlet property="segmentedControl" destination="Cvg-2l-nfK" id="OZF-lG-27V"/>
                         <segue destination="B9t-ui-kqL" kind="show" identifier="RankingToBlogSegue" id="qvt-MF-bnj"/>
                         <segue destination="CqY-Pa-OLX" kind="show" identifier="RankingToNewsSegue" id="ehI-Li-PNK"/>
                         <segue destination="qyA-cA-eYi" kind="show" identifier="RankingToBloggerSegue" id="WLm-Wg-p4g"/>
@@ -426,7 +373,7 @@
         <!--收藏-->
         <scene sceneID="PKE-bY-ahb">
             <objects>
-                <viewController id="lbp-cJ-CCx" sceneMemberID="viewController">
+                <viewController id="lbp-cJ-CCx" customClass="LikedViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vBm-2T-Hcc"/>
                         <viewControllerLayoutGuide type="bottom" id="L2q-IC-qB2"/>
@@ -440,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KS4-Ko-OBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="259"/>
+            <point key="canvasLocation" x="293" y="259"/>
         </scene>
         <!--更多-->
         <scene sceneID="eap-5U-4aL">

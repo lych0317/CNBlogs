@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SwipeViewController.h"
 
-@interface RankingViewController : UIViewController
+@interface RankingViewController : SwipeViewController
 
 @end
