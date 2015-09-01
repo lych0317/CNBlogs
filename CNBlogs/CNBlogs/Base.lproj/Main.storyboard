@@ -161,6 +161,15 @@
                             <outlet property="delegate" destination="qyA-cA-eYi" id="ZZl-3u-uN0"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="YTx-l7-GpO">
+                        <barButtonItem key="rightBarButtonItem" title="收藏" id="ef0-wq-PF4">
+                            <connections>
+                                <action selector="likeBloggerAction:" destination="qyA-cA-eYi" id="czF-Be-b9l"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="B9t-ui-kqL" kind="show" identifier="BloggerToContentSegue" id="Kez-o4-FF9"/>
                     </connections>
@@ -438,6 +447,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="ehI-Li-PNK"/>
         <segue reference="WLm-Wg-p4g"/>
-        <segue reference="qvt-MF-bnj"/>
+        <segue reference="Kez-o4-FF9"/>
     </inferredMetricsTieBreakers>
 </document>

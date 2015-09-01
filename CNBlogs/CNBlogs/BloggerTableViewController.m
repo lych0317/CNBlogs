@@ -42,6 +42,9 @@
     [self.tableView.header beginRefreshing];
 }
 
+- (IBAction)likeBloggerAction:(UIBarButtonItem *)sender {
+}
+
 - (void)requestBlogDataForHeader {
     self.pageIndex = 1;
     self.blogModelArray = [NSMutableArray array];
