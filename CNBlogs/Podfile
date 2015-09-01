@@ -12,6 +12,7 @@ pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'CocoaLumberjack'
 pod 'MJRefresh'
+pod 'GRMustache'
 
 end
 

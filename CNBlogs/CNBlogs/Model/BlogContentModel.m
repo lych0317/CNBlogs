@@ -7,7 +7,17 @@
 //
 
 #import "BlogContentModel.h"
+#import "BlogModel.h"
 
 @implementation BlogContentModel
+
+- (NSString *)html {
+    if (_html == nil) {
+        NSDictionary *dictionary = @{@"title": self.blogModel.title, @"authorName": self.blogModel.author.name, @"publishedTime": [self.blogModel.published stringWithFormate:yyMMddHHmm], @"content": self.content};
+
+        _html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"blog"];
+    }
+    return _html;
+}
 
 @end

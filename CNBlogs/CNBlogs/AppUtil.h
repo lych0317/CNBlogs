@@ -13,5 +13,6 @@
 
 + (void)showProgressWithTitle:(NSString *)title addTo:(UIView *)view animated:(BOOL)animated;
 + (void)hideProgressFromView:(UIView *)view animated:(BOOL)animated;
++ (NSString *)htmlWithDictionary:(NSDictionary *)dictionary usingTemplate:(NSString *)templateName;
 
 @end

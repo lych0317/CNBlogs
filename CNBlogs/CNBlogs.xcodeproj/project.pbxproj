@@ -38,6 +38,8 @@
 		6B5745DD1B9441E9009C1C54 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745DC1B9441E9009C1C54 /* NSDate+Util.m */; };
 		6B5745E21B945214009C1C54 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745E01B945214009C1C54 /* SwipeViewController.m */; };
 		6B57461E1B946AF4009C1C54 /* LikedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B57461D1B946AF4009C1C54 /* LikedViewController.m */; };
+		6B5746211B954D28009C1C54 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746201B954D28009C1C54 /* NSString+Html.m */; };
+		6B5746771B9574A9009C1C54 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 6B5746741B9574A9009C1C54 /* html */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -119,6 +121,9 @@
 		6B5745E01B945214009C1C54 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
 		6B57461C1B946AF4009C1C54 /* LikedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikedViewController.h; sourceTree = "<group>"; };
 		6B57461D1B946AF4009C1C54 /* LikedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedViewController.m; sourceTree = "<group>"; };
+		6B57461F1B954D28009C1C54 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
+		6B5746201B954D28009C1C54 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		6B5746741B9574A9009C1C54 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -266,6 +271,8 @@
 				6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */,
 				6B5745DB1B9441E9009C1C54 /* NSDate+Util.h */,
 				6B5745DC1B9441E9009C1C54 /* NSDate+Util.m */,
+				6B57461F1B954D28009C1C54 /* NSString+Html.h */,
+				6B5746201B954D28009C1C54 /* NSString+Html.m */,
 			);
 			name = Conponent;
 			sourceTree = "<group>";
@@ -305,11 +312,20 @@
 			name = Liked;
 			sourceTree = "<group>";
 		};
+		6B5746221B954F8C009C1C54 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6B5746741B9574A9009C1C54 /* html */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		6BCE9AF31B8C7C6F007AC2EC = {
 			isa = PBXGroup;
 			children = (
 				6B44B8AD1B8D504F00ED4096 /* README.md */,
 				6BCE9AFE1B8C7C6F007AC2EC /* CNBlogs */,
+				6B5746221B954F8C009C1C54 /* Resource */,
 				6BCE9B1B1B8C7C6F007AC2EC /* CNBlogsTests */,
 				6BCE9AFD1B8C7C6F007AC2EC /* Products */,
 				4176EC78D7419EC23B83AA5C /* Pods */,
@@ -463,6 +479,7 @@
 				6B2659DC1B8F039E00ABA509 /* BlogTableViewCell.xib in Resources */,
 				6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */,
 				6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */,
+				6B5746771B9574A9009C1C54 /* html in Resources */,
 				6B2659E91B9015F200ABA509 /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +533,7 @@
 			files = (
 				6B44B8D61B8DB3E200ED4096 /* BlogViewController.m in Sources */,
 				6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */,
+				6B5746211B954D28009C1C54 /* NSString+Html.m in Sources */,
 				6B44B8D31B8DA7E900ED4096 /* BlogTableViewCell.m in Sources */,
 				6B5745E21B945214009C1C54 /* SwipeViewController.m in Sources */,
 				6B44B90B1B8ED33A00ED4096 /* BloggerRecommendTableViewController.m in Sources */,

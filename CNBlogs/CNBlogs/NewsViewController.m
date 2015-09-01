@@ -35,7 +35,7 @@
 - (void)requestContentData {
     [ProtocolUtil getNewsContentWithID:self.newsModel.identifier success:^(NewsContentModel *data, id identifier) {
         [self.contentWebView.scrollView.header endRefreshing];
-        [self.contentWebView loadHTMLString:data.content baseURL:nil];
+        [self.contentWebView loadHTMLString:data.html baseURL:nil];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.contentWebView.scrollView.header endRefreshing];
     }];

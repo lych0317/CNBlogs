@@ -10,4 +10,13 @@
 
 @implementation NewsContentModel
 
+- (NSString *)html {
+    if (_html == nil) {
+        NSDictionary *dictionary = @{@"title": self.title, @"sourceName": self.sourceName, @"submitTime": [self.submitDate stringWithFormate:yyMMddHHmm], @"content": self.content};
+
+        _html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"news"];
+    }
+    return _html;
+}
+
 @end

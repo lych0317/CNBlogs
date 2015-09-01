@@ -35,7 +35,8 @@
     [ProtocolUtil getBlogContentWithID:self.blogModel.identifier success:^(id data, id identifier) {
         [self.contentWebView.scrollView.header endRefreshing];
         BlogContentModel *model = data;
-        [self.contentWebView loadHTMLString:model.content baseURL:nil];
+        model.blogModel = self.blogModel;
+        [self.contentWebView loadHTMLString:model.html baseURL:nil];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.contentWebView.scrollView.header endRefreshing];
     }];

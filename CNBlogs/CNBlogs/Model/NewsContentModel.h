@@ -19,4 +19,7 @@
 @property (nonatomic, copy) NSNumber *nextNews;
 @property (nonatomic, copy) NSNumber *comments;
 
+// 非协议字段
+@property (nonatomic, copy) NSString *html;
+
 @end

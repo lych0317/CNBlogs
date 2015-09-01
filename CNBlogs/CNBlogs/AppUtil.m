@@ -7,6 +7,7 @@
 //
 
 #import "AppUtil.h"
+#import <GRMustache/GRMustache.h>
 
 @implementation AppUtil
 
@@ -23,6 +24,13 @@
         view = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
     }
     [MBProgressHUD hideAllHUDsForView:view animated:animated];
+}
+
++ (NSString *)htmlWithDictionary:(NSDictionary *)dictionary usingTemplate:(NSString *)templateName {
+    NSString *templatePath = [[NSBundle mainBundle] pathForResource:templateName ofType:@"html" inDirectory:@"html"];
+    NSString *template = [NSString stringWithContentsOfFile:templatePath encoding:NSUTF8StringEncoding error:nil];
+
+    return [GRMustacheTemplate renderObject:dictionary fromString:template error:nil];
 }
 
 @end
