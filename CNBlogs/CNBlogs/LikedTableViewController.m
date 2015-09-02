@@ -21,6 +21,8 @@
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor whiteColor];
     self.tableView.tableFooterView = view;
+
+    [self reloadData];
 }
 
 - (void)reloadData {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthorModel.h"
+#import "BlogContentModel.h"
 
 @interface BlogModel : NSObject
 
@@ -16,11 +17,14 @@
 @property (nonatomic, copy) NSString *summary;
 @property (nonatomic, copy) NSDate *publishDate;
 @property (nonatomic, copy) NSDate *updateDate;
-@property (nonatomic, strong) AuthorModel *author;
+@property (nonatomic, strong) AuthorModel *authorModel;
 @property (nonatomic, copy) NSString *link;
 @property (nonatomic, copy) NSString *blogapp;
 @property (nonatomic, copy) NSNumber *diggs;
 @property (nonatomic, copy) NSNumber *views;
 @property (nonatomic, copy) NSNumber *comments;
+
+// 非协议字段
+@property (nonatomic, strong) BlogContentModel *contentModel;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoreDataDAO.h"
+#import <RestKit/RestKit.h>
 
 @interface AppDelegate ()
 
@@ -17,8 +18,31 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupLogger];
     return YES;
+}
+
+- (void)setupLogger {
+    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
+
+#if DEBUG
+    RKLogConfigureByName("RestKit/Network", RKLogLevelDebug);
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+#else
+    RKLogConfigureByName("RestKit/Network", RKLogLevelOff);
+#endif
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    [DDLog addLogger:fileLogger];
+}
+
+void UncaughtExceptionHandler(NSException *exception) {
+    NSArray *arr = [exception callStackSymbols];//得到当前调用栈信息
+    NSString *reason = [exception reason];//非常重要，就是崩溃的原因
+    NSString *name = [exception name];//异常类型
+
+    MyLogInfo(@"===================CRASH LOG===================\n");
+    MyLogError(@"exception type : %@ \n crash reason : %@ \n call stack info : %@", name, reason, arr);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

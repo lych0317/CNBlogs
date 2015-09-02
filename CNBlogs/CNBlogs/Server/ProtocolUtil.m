@@ -49,7 +49,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 + (RKObjectMapping *)blogModelMapping {
     RKObjectMapping *blogMapping = [RKObjectMapping mappingForClass:[BlogModel class]];
     [blogMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"publishDate", @"updated.text": @"updateDate", @"link.href": @"link", @"blogapp.text": @"blogapp", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments"}];
-    [blogMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"author" toKeyPath:@"author" withMapping:[self authorModelMapping]]];
+    [blogMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"author" toKeyPath:@"authorModel" withMapping:[self authorModelMapping]]];
     return blogMapping;
 }
 
@@ -173,7 +173,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
 + (RKObjectMapping *)newsContentModelMapping {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[NewsContentModel class]];
-    [mapping addAttributeMappingsFromDictionary:@{@"Title.text": @"title", @"SourceName.text": @"sourceName", @"SubmitDate.text": @"submitDate", @"Content.text": @"content", @"ImageUrl.text": @"imageUrl", @"PrevNews.text": @"prevNews", @"NextNews.text": @"nextNews", @"CommentCount.text": @"comments"}];
+    [mapping addAttributeMappingsFromDictionary:@{@"Content.text": @"content", @"ImageUrl.text": @"imageUrl"}];
     return mapping;
 }
 

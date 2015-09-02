@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NewsContentModel.h"
 
 @interface NewsModel : NSObject
 
@@ -22,5 +23,8 @@
 @property (nonatomic, copy) NSString *topic;
 @property (nonatomic, copy) NSString *topicIcon;
 @property (nonatomic, copy) NSString *sourceName;
+
+// 非协议字段
+@property (nonatomic, strong) NewsContentModel *contentModel;
 
 @end

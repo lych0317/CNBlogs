@@ -35,7 +35,8 @@
 - (UIButton *)likeButton {
     if (_likeButton == nil) {
         _likeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        [_likeButton setImage:[UIImage imageNamed:@"toolbar-starred"] forState:UIControlStateNormal];
+        [_likeButton setImage:[UIImage imageNamed:@"toolbar-star"] forState:UIControlStateNormal];
+        [_likeButton setImage:[UIImage imageNamed:@"toolbar-starred"] forState:UIControlStateSelected];
     }
     return _likeButton;
 }

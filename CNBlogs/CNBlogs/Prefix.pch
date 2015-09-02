@@ -13,7 +13,14 @@
 #import "AppUtil.h"
 #import "NSDate+Util.h"
 #import "NSString+Html.h"
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
+#endif
+
+#if DEBUG
+    #define MyLogInfo(frmt, ...) DDLogInfo(([NSString stringWithFormat:@"DEBUG: %@", frmt]), ##__VA_ARGS__)
+    #define MyLogError(frmt, ...) DDLogError(([NSString stringWithFormat:@"DEBUG: %@", frmt]), ##__VA_ARGS__)
+#else
+    #define MyLogInfo(frmt, ...) DDLogInfo(([NSString stringWithFormat:@"RELEASE: %@", frmt]), ##__VA_ARGS__)
+    #define MyLogError(frmt, ...) DDLogError(([NSString stringWithFormat:@"RELEASE: %@", frmt]), ##__VA_ARGS__)
 #endif

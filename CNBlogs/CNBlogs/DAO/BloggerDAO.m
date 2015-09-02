@@ -26,6 +26,7 @@
 
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
+        MyLogError(@"插入blogger失败：%@", error.description);
         return -1;
     }
     return 0;
@@ -35,10 +36,10 @@
     NSManagedObjectContext *context = [self managedObjectContext];
 
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"BloggerEntity" inManagedObjectContext:context];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", bloggerModel.identifier];
+
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     fetchRequest.entity = entityDescription;
-
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", bloggerModel.identifier];
     fetchRequest.predicate = predicate;
 
     NSError *error = nil;
@@ -48,9 +49,11 @@
         [context deleteObject:bloggerEntity];
 
         if ([context hasChanges] && ![context save:&error]) {
+            MyLogError(@"删除blogger失败：%@", error.description);
             return -1;
         }
     } else {
+        MyLogError(@"正在删除一个不存在的blogger：%@", error.description);
         return -1;
     }
     return 0;
@@ -60,10 +63,10 @@
     NSManagedObjectContext *context = [self managedObjectContext];
 
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"BloggerEntity" inManagedObjectContext:context];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"likeDate" ascending:NO];
+
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     fetchRequest.entity = entity;
-
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"likeDate" ascending:NO];
     fetchRequest.sortDescriptors = @[sortDescriptor];
 
     NSError *error = nil;

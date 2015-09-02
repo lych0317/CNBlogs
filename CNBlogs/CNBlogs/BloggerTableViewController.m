@@ -85,7 +85,7 @@
     BlogModel *model = self.blogModelArray[indexPath.row];
     cell.titleLabel.text = model.title;
     cell.summaryLabel.text = model.summary;
-    cell.authorLabel.text = model.author.name;
+    cell.authorLabel.text = model.authorModel.name;
     cell.publishedLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
     cell.diggLabel.text = [model.diggs stringValue];
     cell.viewLabel.text = [model.views stringValue];

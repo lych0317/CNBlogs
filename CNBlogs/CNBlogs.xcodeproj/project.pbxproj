@@ -50,6 +50,15 @@
 		6B5746A21B96AED4009C1C54 /* toolbar-starred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5746A11B96AED4009C1C54 /* toolbar-starred@2x.png */; };
 		6B5746A51B96C646009C1C54 /* BlogCommentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746A41B96C646009C1C54 /* BlogCommentTableViewController.m */; };
 		6B5746A81B96C658009C1C54 /* NewsCommentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746A71B96C658009C1C54 /* NewsCommentTableViewController.m */; };
+		6B5746AB1B96D7A4009C1C54 /* NewsContentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746AA1B96D7A4009C1C54 /* NewsContentEntity.m */; };
+		6B5746AE1B96D7A5009C1C54 /* AuthorEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746AD1B96D7A5009C1C54 /* AuthorEntity.m */; };
+		6B5746B11B96D7A5009C1C54 /* BlogEntiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746B01B96D7A5009C1C54 /* BlogEntiry.m */; };
+		6B5746B41B96D7A5009C1C54 /* BlogContentEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746B31B96D7A5009C1C54 /* BlogContentEntity.m */; };
+		6B5746B71B96D7A5009C1C54 /* NewsEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746B61B96D7A5009C1C54 /* NewsEntity.m */; };
+		6B5746BA1B96E082009C1C54 /* BlogDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746B91B96E082009C1C54 /* BlogDAO.m */; };
+		6B5746BD1B96E097009C1C54 /* NewsDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746BC1B96E097009C1C54 /* NewsDAO.m */; };
+		6B5746BF1B96EACC009C1C54 /* toolbar-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B5746BE1B96EACC009C1C54 /* toolbar-star@2x.png */; };
+		6B5746C21B96EDE1009C1C54 /* LikedBlogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746C11B96EDE1009C1C54 /* LikedBlogTableViewController.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -153,6 +162,23 @@
 		6B5746A41B96C646009C1C54 /* BlogCommentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogCommentTableViewController.m; sourceTree = "<group>"; };
 		6B5746A61B96C658009C1C54 /* NewsCommentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCommentTableViewController.h; sourceTree = "<group>"; };
 		6B5746A71B96C658009C1C54 /* NewsCommentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCommentTableViewController.m; sourceTree = "<group>"; };
+		6B5746A91B96D7A4009C1C54 /* NewsContentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentEntity.h; sourceTree = "<group>"; };
+		6B5746AA1B96D7A4009C1C54 /* NewsContentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentEntity.m; sourceTree = "<group>"; };
+		6B5746AC1B96D7A5009C1C54 /* AuthorEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorEntity.h; sourceTree = "<group>"; };
+		6B5746AD1B96D7A5009C1C54 /* AuthorEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorEntity.m; sourceTree = "<group>"; };
+		6B5746AF1B96D7A5009C1C54 /* BlogEntiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogEntiry.h; sourceTree = "<group>"; };
+		6B5746B01B96D7A5009C1C54 /* BlogEntiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogEntiry.m; sourceTree = "<group>"; };
+		6B5746B21B96D7A5009C1C54 /* BlogContentEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogContentEntity.h; sourceTree = "<group>"; };
+		6B5746B31B96D7A5009C1C54 /* BlogContentEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogContentEntity.m; sourceTree = "<group>"; };
+		6B5746B51B96D7A5009C1C54 /* NewsEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsEntity.h; sourceTree = "<group>"; };
+		6B5746B61B96D7A5009C1C54 /* NewsEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsEntity.m; sourceTree = "<group>"; };
+		6B5746B81B96E082009C1C54 /* BlogDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlogDAO.h; sourceTree = "<group>"; };
+		6B5746B91B96E082009C1C54 /* BlogDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogDAO.m; sourceTree = "<group>"; };
+		6B5746BB1B96E097009C1C54 /* NewsDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDAO.h; sourceTree = "<group>"; };
+		6B5746BC1B96E097009C1C54 /* NewsDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDAO.m; sourceTree = "<group>"; };
+		6B5746BE1B96EACC009C1C54 /* toolbar-star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-star@2x.png"; sourceTree = "<group>"; };
+		6B5746C01B96EDE1009C1C54 /* LikedBlogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikedBlogTableViewController.h; sourceTree = "<group>"; };
+		6B5746C11B96EDE1009C1C54 /* LikedBlogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedBlogTableViewController.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -351,6 +377,8 @@
 				6B5746991B9690D6009C1C54 /* LikedTableViewController.m */,
 				6B5746911B95E716009C1C54 /* LikedBloggerTableViewController.h */,
 				6B5746921B95E716009C1C54 /* LikedBloggerTableViewController.m */,
+				6B5746C01B96EDE1009C1C54 /* LikedBlogTableViewController.h */,
+				6B5746C11B96EDE1009C1C54 /* LikedBlogTableViewController.m */,
 			);
 			name = Liked;
 			sourceTree = "<group>";
@@ -370,6 +398,10 @@
 				6B57468C1B95E0C8009C1C54 /* CoreDataDAO.m */,
 				6B57468E1B95E1E9009C1C54 /* BloggerDAO.h */,
 				6B57468F1B95E1E9009C1C54 /* BloggerDAO.m */,
+				6B5746B81B96E082009C1C54 /* BlogDAO.h */,
+				6B5746B91B96E082009C1C54 /* BlogDAO.m */,
+				6B5746BB1B96E097009C1C54 /* NewsDAO.h */,
+				6B5746BC1B96E097009C1C54 /* NewsDAO.m */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -377,6 +409,16 @@
 		6B5746941B95E961009C1C54 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				6B5746B51B96D7A5009C1C54 /* NewsEntity.h */,
+				6B5746B61B96D7A5009C1C54 /* NewsEntity.m */,
+				6B5746B21B96D7A5009C1C54 /* BlogContentEntity.h */,
+				6B5746B31B96D7A5009C1C54 /* BlogContentEntity.m */,
+				6B5746AF1B96D7A5009C1C54 /* BlogEntiry.h */,
+				6B5746B01B96D7A5009C1C54 /* BlogEntiry.m */,
+				6B5746AC1B96D7A5009C1C54 /* AuthorEntity.h */,
+				6B5746AD1B96D7A5009C1C54 /* AuthorEntity.m */,
+				6B5746A91B96D7A4009C1C54 /* NewsContentEntity.h */,
+				6B5746AA1B96D7A4009C1C54 /* NewsContentEntity.m */,
 				6B5746951B95E992009C1C54 /* BloggerEntity.h */,
 				6B5746961B95E992009C1C54 /* BloggerEntity.m */,
 			);
@@ -388,6 +430,7 @@
 			children = (
 				6B44B8AD1B8D504F00ED4096 /* README.md */,
 				6B5746A11B96AED4009C1C54 /* toolbar-starred@2x.png */,
+				6B5746BE1B96EACC009C1C54 /* toolbar-star@2x.png */,
 				6BCE9AFE1B8C7C6F007AC2EC /* CNBlogs */,
 				6B5746221B954F8C009C1C54 /* Resource */,
 				6BCE9B1B1B8C7C6F007AC2EC /* CNBlogsTests */,
@@ -541,6 +584,7 @@
 			files = (
 				6B44B9161B8ED5A500ED4096 /* BloggerTableViewCell.xib in Resources */,
 				6B2659DC1B8F039E00ABA509 /* BlogTableViewCell.xib in Resources */,
+				6B5746BF1B96EACC009C1C54 /* toolbar-star@2x.png in Resources */,
 				6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */,
 				6B5746A21B96AED4009C1C54 /* toolbar-starred@2x.png in Resources */,
 				6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */,
@@ -597,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B44B8D61B8DB3E200ED4096 /* BlogViewController.m in Sources */,
+				6B5746BA1B96E082009C1C54 /* BlogDAO.m in Sources */,
 				6B44B8C21B8D581400ED4096 /* NewsContentModel.m in Sources */,
 				6B5746A01B969F81009C1C54 /* ContentBarView.m in Sources */,
 				6B5746211B954D28009C1C54 /* NSString+Html.m in Sources */,
@@ -604,16 +649,20 @@
 				6B5745E21B945214009C1C54 /* SwipeViewController.m in Sources */,
 				6B44B90B1B8ED33A00ED4096 /* BloggerRecommendTableViewController.m in Sources */,
 				6B2659EE1B90724600ABA509 /* SearchBlogViewController.m in Sources */,
+				6B5746B41B96D7A5009C1C54 /* BlogContentEntity.m in Sources */,
 				6B5746A81B96C658009C1C54 /* NewsCommentTableViewController.m in Sources */,
 				6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */,
 				6B5746901B95E1E9009C1C54 /* BloggerDAO.m in Sources */,
+				6B5746C21B96EDE1009C1C54 /* LikedBlogTableViewController.m in Sources */,
 				6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */,
 				6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */,
 				6B2659F11B9078AE00ABA509 /* BloggerTableViewController.m in Sources */,
 				6B44B9031B8EBDFD00ED4096 /* RankingViewController.m in Sources */,
 				6B44B9151B8ED5A500ED4096 /* BloggerTableViewCell.m in Sources */,
+				6B5746B71B96D7A5009C1C54 /* NewsEntity.m in Sources */,
 				6B5746931B95E716009C1C54 /* LikedBloggerTableViewController.m in Sources */,
 				6B57469A1B9690D6009C1C54 /* LikedTableViewController.m in Sources */,
+				6B5746B11B96D7A5009C1C54 /* BlogEntiry.m in Sources */,
 				6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */,
 				6B44B8AE1B8D504F00ED4096 /* README.md in Sources */,
 				6B2659E01B8F1DF800ABA509 /* RecommendIn10DTableViewController.m in Sources */,
@@ -623,11 +672,13 @@
 				6B44B8C51B8D589300ED4096 /* BloggerModel.m in Sources */,
 				6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */,
 				6B44B8E11B8DC10B00ED4096 /* NewsTableViewController.m in Sources */,
+				6B5746AB1B96D7A4009C1C54 /* NewsContentEntity.m in Sources */,
 				6B5746A51B96C646009C1C54 /* BlogCommentTableViewController.m in Sources */,
 				6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */,
 				6B5746971B95E992009C1C54 /* BloggerEntity.m in Sources */,
 				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
 				6B57469D1B969E48009C1C54 /* ContentViewController.m in Sources */,
+				6B5746BD1B96E097009C1C54 /* NewsDAO.m in Sources */,
 				6B57461E1B946AF4009C1C54 /* LikedViewController.m in Sources */,
 				6B44B8E71B8EAF3800ED4096 /* AppTabBarViewController.m in Sources */,
 				6B44B8E41B8DC84200ED4096 /* NewsTableViewCell.m in Sources */,
@@ -637,6 +688,7 @@
 				6B57468D1B95E0C8009C1C54 /* CoreDataDAO.m in Sources */,
 				6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */,
 				6B5745D91B93FBCA009C1C54 /* NewsViewController.m in Sources */,
+				6B5746AE1B96D7A5009C1C54 /* AuthorEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +811,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = CNBlogs/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"LOG_LEVEL_DEF=DDLogLevelAll",
+				);
 				INFOPLIST_FILE = CNBlogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -774,6 +831,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = CNBlogs/Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"LOG_LEVEL_DEF=DDLogLevelAll",
+				);
 				INFOPLIST_FILE = CNBlogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

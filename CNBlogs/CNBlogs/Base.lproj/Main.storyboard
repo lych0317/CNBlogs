@@ -393,7 +393,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="收藏" id="Enz-L3-6BN"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="收藏" id="Enz-L3-6BN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ccF-xa-eAH">
+                            <connections>
+                                <action selector="editAction:" destination="lbp-cJ-CCx" id="3Vv-sI-Vbl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="qyA-cA-eYi" kind="show" identifier="LikedToBloggerSegue" id="3rK-Qv-5vf"/>
                         <segue destination="B9t-ui-kqL" kind="show" identifier="LikedToBlogSegue" id="VWs-S1-24F"/>

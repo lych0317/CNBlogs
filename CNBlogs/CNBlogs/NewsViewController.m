@@ -27,13 +27,24 @@
         [weakSelf requestContentData];
     }];
 
-    [self.contentWebView.scrollView.header beginRefreshing];
+    if (self.newsModel.contentModel) {
+        [self loadWebView];
+    } else {
+        [self.contentWebView.scrollView.header beginRefreshing];
+    }
+}
+
+- (void)loadWebView {
+    NSDictionary *dictionary = @{@"title": self.newsModel.title, @"sourceName": self.newsModel.sourceName, @"submitTime": [self.newsModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.newsModel.contentModel.content};
+
+    NSString *html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"news"];
+    [self.contentWebView loadHTMLString:html baseURL:nil];
 }
 
 - (void)requestContentData {
-    [ProtocolUtil getNewsContentWithID:self.newsModel.identifier success:^(NewsContentModel *data, id identifier) {
+    [ProtocolUtil getNewsContentWithID:self.newsModel.identifier success:^(id data, id identifier) {
         [self.contentWebView.scrollView.header endRefreshing];
-        [self.contentWebView loadHTMLString:data.html baseURL:nil];
+        self.newsModel.contentModel = data;
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.contentWebView.scrollView.header endRefreshing];
     }];

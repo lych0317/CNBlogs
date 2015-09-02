@@ -7,8 +7,11 @@
 //
 
 #import "BlogViewController.h"
+#import "ContentBarView.h"
 #import "ProtocolUtil.h"
 #import "BlogContentModel.h"
+#import "BlogDAO.h"
+#import "BlogModel.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface BlogViewController ()
@@ -26,15 +29,38 @@
         [weakSelf requestContentData];
     }];
 
-    [self.contentWebView.scrollView.header beginRefreshing];
+    if (self.blogModel.contentModel) {
+        [self loadWebView];
+    } else {
+        [self.contentWebView.scrollView.header beginRefreshing];
+    }
+
+    BlogDAO *dao = [[BlogDAO alloc] init];
+    self.contentBarView.likeButton.selected = [dao findBlog:self.blogModel] != nil;
+}
+
+- (void)likeButtonAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    BlogDAO *dao = [[BlogDAO alloc] init];
+    if (sender.selected) {
+        [dao insertBlog:self.blogModel];
+    } else {
+        [dao deleteBlog:self.blogModel];
+    }
+}
+
+- (void)loadWebView {
+    NSDictionary *dictionary = @{@"title": self.blogModel.title, @"authorName": self.blogModel.authorModel.name, @"publishedTime": [self.blogModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.blogModel.contentModel.content};
+
+    NSString *html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"blog"];
+    [self.contentWebView loadHTMLString:html baseURL:nil];
 }
 
 - (void)requestContentData {
     [ProtocolUtil getBlogContentWithID:self.blogModel.identifier success:^(id data, id identifier) {
         [self.contentWebView.scrollView.header endRefreshing];
-        BlogContentModel *model = data;
-        model.blogModel = self.blogModel;
-        [self.contentWebView loadHTMLString:model.html baseURL:nil];
+        self.blogModel.contentModel = data;
+        [self loadWebView];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.contentWebView.scrollView.header endRefreshing];
     }];

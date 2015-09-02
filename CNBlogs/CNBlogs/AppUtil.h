@@ -15,4 +15,6 @@
 + (void)hideProgressFromView:(UIView *)view animated:(BOOL)animated;
 + (NSString *)htmlWithDictionary:(NSDictionary *)dictionary usingTemplate:(NSString *)templateName;
 
++ (void)showToastWithTitle:(NSString *)title;
+
 @end

@@ -1,48 +1,33 @@
 //
-//  RecommendIn10DTableViewController.m
+//  LikedBlogTableViewController.m
 //  CNBlogs
 //
-//  Created by 李远超 on 15/8/27.
+//  Created by 李远超 on 15/9/2.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "RecommendIn10DTableViewController.h"
-#import "ProtocolUtil.h"
+#import "LikedBlogTableViewController.h"
 #import "BlogModel.h"
+#import "BlogDAO.h"
 #import "BlogTableViewCell.h"
-#import "BlogViewController.h"
-#import <MJRefresh/MJRefresh.h>
 
-@interface RecommendIn10DTableViewController ()
+@interface LikedBlogTableViewController ()
 
-@property (nonatomic, strong) NSArray *blogModelArray;
+@property (nonatomic, strong) NSMutableArray *blogModelArray;
 
 @end
 
-@implementation RecommendIn10DTableViewController
+@implementation LikedBlogTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
-
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
-
-    __weak RecommendIn10DTableViewController *weakSelf = self;
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestBlogData];
-    }];
-
-    [self.tableView.header beginRefreshing];
 }
 
-- (void)requestBlogData {
-    [ProtocolUtil getRecommendIn10DListWithCount:@(20) success:^(id data, id identifier) {
-        [self.tableView.header endRefreshing];
-        self.blogModelArray = data;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [self.tableView.header endRefreshing];
-    }];
+- (void)reloadData {
+    BlogDAO *dao = [[BlogDAO alloc] init];
+    self.blogModelArray = [NSMutableArray arrayWithArray:[dao findAllBlog]];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -75,6 +60,16 @@
     if (self.didSelectBlogBlock) {
         BlogModel *model = self.blogModelArray[indexPath.row];
         self.didSelectBlogBlock(self, model);
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        BlogModel *model = self.blogModelArray[indexPath.row];
+        BlogDAO *dao = [[BlogDAO alloc] init];
+        [dao deleteBlog:model];
+        [self.blogModelArray removeObject:model];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 

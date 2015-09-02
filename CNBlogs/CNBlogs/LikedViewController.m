@@ -8,6 +8,7 @@
 
 #import "LikedViewController.h"
 #import "LikedBloggerTableViewController.h"
+#import "LikedBlogTableViewController.h"
 
 #import "BloggerTableViewController.h"
 #import "BlogViewController.h"
@@ -28,7 +29,12 @@
         [weakSelf performSegueWithIdentifier:@"LikedToBloggerSegue" sender:model];
     };
 
-    self.viewControllerArray = @[bloggerViewController];
+    LikedBlogTableViewController *blogViewController = [[LikedBlogTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    blogViewController.didSelectBlogBlock = ^(LikedBlogTableViewController *viewController, BlogModel *model) {
+        [weakSelf performSegueWithIdentifier:@"LikedToBlogSegue" sender:model];
+    };
+
+    self.viewControllerArray = @[bloggerViewController, blogViewController];
     [super viewDidLoad];
 }
 
@@ -38,6 +44,10 @@
     [viewController reloadData];
 }
 
+- (IBAction)editAction:(UIBarButtonItem *)sender {
+    LikedTableViewController *viewController = self.viewControllerArray[self.segmentedControl.selectedSegmentIndex];
+    viewController.tableView.editing = !viewController.tableView.editing;
+}
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AuthorEntity" representedClassName="AuthorEntity" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uri" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BlogContentEntity" representedClassName="BlogContentEntity" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BlogEntiry" representedClassName="BlogEntiry" syncable="YES">
+        <attribute name="blogapp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="diggs" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="likeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="views" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="authorEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AuthorEntity" syncable="YES"/>
+        <relationship name="contentEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BlogContentEntity" syncable="YES"/>
+    </entity>
     <entity name="BloggerEntity" representedClassName="BloggerEntity" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="blogapp" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,7 +33,32 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="NewsContentEntity" representedClassName="NewsContentEntity" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="NewsEntity" representedClassName="NewsEntity" syncable="YES">
+        <attribute name="blogapp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comments" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="diggs" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="likeDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sourceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicIcon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="views" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="contentEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewsContentEntity" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="BloggerEntity" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="BloggerEntity" positionX="-225" positionY="-207" width="128" height="165"/>
+        <element name="BlogEntiry" positionX="-180" positionY="171" width="128" height="238"/>
+        <element name="AuthorEntity" positionX="-27" positionY="180" width="128" height="90"/>
+        <element name="BlogContentEntity" positionX="43" positionY="282" width="128" height="60"/>
+        <element name="NewsEntity" positionX="-27" positionY="-144" width="128" height="270"/>
+        <element name="NewsContentEntity" positionX="126" positionY="-45" width="128" height="60"/>
     </elements>
 </model>

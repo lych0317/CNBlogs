@@ -33,4 +33,13 @@
     return [GRMustacheTemplate renderObject:dictionary fromString:template error:nil];
 }
 
++ (void)showToastWithTitle:(NSString *)title {
+    MBProgressHUD *toast = [MBProgressHUD showHUDAddedTo:[[[UIApplication sharedApplication] windows] objectAtIndex:0] animated:YES];
+    toast.userInteractionEnabled = NO;
+    toast.mode = MBProgressHUDModeCustomView;
+    toast.yOffset = -30.0f;
+    toast.labelText = title;
+    [toast hide:YES afterDelay:2];
+}
+
 @end
