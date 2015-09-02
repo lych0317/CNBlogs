@@ -14,8 +14,6 @@
 
 @interface NewsViewController ()
 
-@property (weak, nonatomic) IBOutlet UIWebView *contentWebView;
-
 @end
 
 @implementation NewsViewController

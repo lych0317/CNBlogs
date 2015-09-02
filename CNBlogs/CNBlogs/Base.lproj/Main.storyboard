@@ -138,7 +138,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1053" y="-3210"/>
+            <point key="canvasLocation" x="1333" y="-2230"/>
         </scene>
         <!--博主-->
         <scene sceneID="K0V-0v-BaZ">
@@ -176,7 +176,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bha-bc-eop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-3210"/>
+            <point key="canvasLocation" x="2639" y="-2230"/>
         </scene>
         <!--内容-->
         <scene sceneID="hIW-C4-Xin">
@@ -189,28 +189,15 @@
                     <view key="view" contentMode="scaleToFill" id="3sN-JS-CGz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-T8-RkO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xDb-T8-RkO" firstAttribute="leading" secondItem="3sN-JS-CGz" secondAttribute="leading" id="EAJ-hl-1jy"/>
-                            <constraint firstItem="xDb-T8-RkO" firstAttribute="top" secondItem="3sN-JS-CGz" secondAttribute="top" id="SOp-fG-3YS"/>
-                            <constraint firstAttribute="trailing" secondItem="xDb-T8-RkO" secondAttribute="trailing" id="WrR-ne-FHP"/>
-                            <constraint firstAttribute="bottom" secondItem="xDb-T8-RkO" secondAttribute="bottom" id="qJD-9g-SrJ"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentWebView" destination="xDb-T8-RkO" id="3SE-ek-urP"/>
-                        <segue destination="XfB-8n-6Jd" kind="show" id="UkE-A1-pQr"/>
+                        <segue destination="XfB-8n-6Jd" kind="show" identifier="BlogToCommentSegue" id="UkE-A1-pQr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0S-6S-hcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-2230"/>
+            <point key="canvasLocation" x="2639" y="-1250"/>
         </scene>
         <!--评论-->
         <scene sceneID="iQx-IK-MDd">
@@ -236,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgS-x9-aMG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="-2230"/>
+            <point key="canvasLocation" x="3377" y="-1250"/>
         </scene>
         <!--新闻-->
         <scene sceneID="mNz-In-F0i">
@@ -297,27 +284,41 @@
                     <view key="view" contentMode="scaleToFill" id="vF0-JF-ThC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oUJ-kR-3A6">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oUJ-kR-3A6" firstAttribute="leading" secondItem="vF0-JF-ThC" secondAttribute="leading" id="Bll-fC-MRi"/>
-                            <constraint firstItem="oUJ-kR-3A6" firstAttribute="top" secondItem="vF0-JF-ThC" secondAttribute="top" id="fBI-0U-bbh"/>
-                            <constraint firstAttribute="trailing" secondItem="oUJ-kR-3A6" secondAttribute="trailing" id="h0v-bX-ccl"/>
-                            <constraint firstAttribute="bottom" secondItem="oUJ-kR-3A6" secondAttribute="bottom" id="ouj-Hk-3jF"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentWebView" destination="oUJ-kR-3A6" id="9uk-vt-FEt"/>
+                        <segue destination="vMg-BR-kbO" kind="show" identifier="NewsToCommentSegue" id="0LI-0E-oZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogn-69-fRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-1409"/>
+            <point key="canvasLocation" x="2639" y="-429"/>
+        </scene>
+        <!--评论-->
+        <scene sceneID="pJY-2z-jHO">
+            <objects>
+                <tableViewController title="评论" hidesBottomBarWhenPushed="YES" id="vMg-BR-kbO" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ah4-lt-EVL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6bF-Ff-oSK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6bF-Ff-oSK" id="bCS-P7-He4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vMg-BR-kbO" id="flv-IN-nL3"/>
+                            <outlet property="delegate" destination="vMg-BR-kbO" id="g3O-YR-Rui"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1do-CR-a6T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3377" y="-429"/>
         </scene>
         <!--排行-->
         <scene sceneID="rzd-8b-ISb">
@@ -452,6 +453,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="wHM-vU-S8s"/>
         <segue reference="3rK-Qv-5vf"/>
-        <segue reference="Kez-o4-FF9"/>
+        <segue reference="VWs-S1-24F"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ContentViewController.h"
 
 @class NewsModel;
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : ContentViewController
 
 @property (nonatomic, strong) NewsModel *newsModel;
 

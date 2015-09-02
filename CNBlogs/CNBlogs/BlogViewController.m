@@ -13,8 +13,6 @@
 
 @interface BlogViewController ()
 
-@property (weak, nonatomic) IBOutlet UIWebView *contentWebView;
-
 @end
 
 @implementation BlogViewController
