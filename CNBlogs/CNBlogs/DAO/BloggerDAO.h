@@ -13,6 +13,7 @@
 
 - (NSInteger)insertBlogger:(BloggerModel *)bloggerModel;
 - (NSInteger)deleteBlogger:(BloggerModel *)bloggerModel;
+- (BloggerModel *)findBlogger:(BloggerModel *)bloggerModel;
 - (NSArray *)findAllBlogger;
 
 @end

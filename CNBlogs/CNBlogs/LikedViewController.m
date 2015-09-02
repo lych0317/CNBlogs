@@ -9,6 +9,7 @@
 #import "LikedViewController.h"
 #import "LikedBloggerTableViewController.h"
 #import "LikedBlogTableViewController.h"
+#import "LikedNewsTableViewController.h"
 
 #import "BloggerTableViewController.h"
 #import "BlogViewController.h"
@@ -34,7 +35,12 @@
         [weakSelf performSegueWithIdentifier:@"LikedToBlogSegue" sender:model];
     };
 
-    self.viewControllerArray = @[bloggerViewController, blogViewController];
+    LikedNewsTableViewController *newsViewController = [[LikedNewsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    newsViewController.didSelectNewsBlock = ^(LikedNewsTableViewController *viewController, NewsModel *model) {
+        [weakSelf performSegueWithIdentifier:@"LikedToNewsSegue" sender:model];
+    };
+
+    self.viewControllerArray = @[bloggerViewController, blogViewController, newsViewController];
     [super viewDidLoad];
 }
 

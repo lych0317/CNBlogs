@@ -7,9 +7,11 @@
 //
 
 #import "NewsViewController.h"
+#import "ContentBarView.h"
 #import "NewsModel.h"
 #import "ProtocolUtil.h"
 #import "NewsContentModel.h"
+#import "NewsDAO.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface NewsViewController ()
@@ -20,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.newsModel.title;
+    self.title = NSLocalizedString(@"新闻详情", "");
 
     __weak NewsViewController *weakSelf = self;
     self.contentWebView.scrollView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
@@ -31,6 +33,19 @@
         [self loadWebView];
     } else {
         [self.contentWebView.scrollView.header beginRefreshing];
+    }
+
+    NewsDAO *dao = [[NewsDAO alloc] init];
+    self.contentBarView.likeButton.selected = [dao findNews:self.newsModel] != nil;
+}
+
+- (void)likeButtonAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    NewsDAO *dao = [[NewsDAO alloc] init];
+    if (sender.selected) {
+        [dao insertNews:self.newsModel];
+    } else {
+        [dao deleteNews:self.newsModel];
     }
 }
 

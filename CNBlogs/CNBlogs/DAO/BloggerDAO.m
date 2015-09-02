@@ -52,11 +52,34 @@
             MyLogError(@"删除blogger失败：%@", error.description);
             return -1;
         }
+    } else if (error) {
+        MyLogError(@"在查询将要删除的blogger时失败：%@", error.description);
+        return -1;
     } else {
-        MyLogError(@"正在删除一个不存在的blogger：%@", error.description);
+        MyLogError(@"未查询到将要删除的blogger");
         return -1;
     }
     return 0;
+}
+
+- (BloggerModel *)findBlogger:(BloggerModel *)bloggerModel {
+    NSManagedObjectContext *context = [self managedObjectContext];
+
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"BloggerEntity" inManagedObjectContext:context];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", bloggerModel.identifier];
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.entity = entityDescription;
+    fetchRequest.predicate = predicate;
+
+    NSError *error = nil;
+    NSArray *listData = [context executeFetchRequest:fetchRequest error:&error];
+    if (listData.count > 0) {
+        return [self bloggerModelFromEntity:listData.firstObject];
+    } else if (error) {
+        MyLogError(@"查询blog失败：%@", error.description);
+    }
+    return nil;
 }
 
 - (NSArray *)findAllBlogger {
@@ -72,21 +95,28 @@
     NSError *error = nil;
     NSArray *listData = [context executeFetchRequest:fetchRequest error:&error];
 
-    NSMutableArray *retArray = [NSMutableArray array];
-
-    for (BloggerEntity *bloggerEntity in listData) {
-        BloggerModel *bloggerModel = [[BloggerModel alloc] init];
-        bloggerModel.identifier = bloggerEntity.identifier;
-        bloggerModel.title = bloggerEntity.title;
-        bloggerModel.updateDate = bloggerEntity.updateDate;
-        bloggerModel.link = bloggerEntity.link;
-        bloggerModel.blogapp = bloggerEntity.blogapp;
-        bloggerModel.avatar = bloggerEntity.avatar;
-        bloggerModel.postCount = bloggerEntity.postCount;
-
-        [retArray addObject:bloggerModel];
+    if (listData.count > 0) {
+        NSMutableArray *retArray = [NSMutableArray arrayWithCapacity:listData.count];
+        for (BloggerEntity *bloggerEntity in listData) {
+            [retArray addObject:[self bloggerModelFromEntity:bloggerEntity]];
+        }
+        return retArray;
+    } else if (error) {
+        MyLogError(@"查询blogger失败：%@", error.description);
     }
-    return retArray;
+    return @[];
+}
+
+- (BloggerModel *)bloggerModelFromEntity:(BloggerEntity *)bloggerEntity {
+    BloggerModel *bloggerModel = [[BloggerModel alloc] init];
+    bloggerModel.identifier = bloggerEntity.identifier;
+    bloggerModel.title = bloggerEntity.title;
+    bloggerModel.updateDate = bloggerEntity.updateDate;
+    bloggerModel.link = bloggerEntity.link;
+    bloggerModel.blogapp = bloggerEntity.blogapp;
+    bloggerModel.avatar = bloggerEntity.avatar;
+    bloggerModel.postCount = bloggerEntity.postCount;
+    return bloggerModel;
 }
 
 @end

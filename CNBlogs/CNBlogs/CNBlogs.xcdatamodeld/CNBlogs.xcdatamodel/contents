@@ -49,7 +49,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topicIcon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="updateDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updateDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="views" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="contentEntity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewsContentEntity" syncable="YES"/>
     </entity>
@@ -58,7 +58,7 @@
         <element name="BlogEntiry" positionX="-180" positionY="171" width="128" height="238"/>
         <element name="AuthorEntity" positionX="-27" positionY="180" width="128" height="90"/>
         <element name="BlogContentEntity" positionX="43" positionY="282" width="128" height="60"/>
-        <element name="NewsEntity" positionX="-27" positionY="-144" width="128" height="270"/>
+        <element name="NewsEntity" positionX="-27" positionY="-144" width="128" height="268"/>
         <element name="NewsContentEntity" positionX="126" positionY="-45" width="128" height="60"/>
     </elements>
 </model>

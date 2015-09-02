@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = self.blogModel.title;
+    self.title = NSLocalizedString(@"博客详情", @"");
 
     __weak BlogViewController *weakSelf = self;
     self.contentWebView.scrollView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{

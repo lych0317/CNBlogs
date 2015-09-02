@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSDate * publishDate;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) NSString * updateDate;
+@property (nonatomic, retain) NSDate * updateDate;
 @property (nonatomic, retain) NSNumber * views;
 @property (nonatomic, retain) NSString * topic;
 @property (nonatomic, retain) NSString * topicIcon;

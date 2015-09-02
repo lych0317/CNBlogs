@@ -28,6 +28,15 @@
     [super viewDidLoad];
     self.title = self.bloggerModel.title;
 
+    UIButton *likeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [likeButton setImage:[UIImage imageNamed:@"toolbar-star"] forState:UIControlStateNormal];
+    [likeButton setImage:[UIImage imageNamed:@"toolbar-starred"] forState:UIControlStateSelected];
+    [likeButton addTarget:self action:@selector(likeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    BloggerDAO *dao = [[BloggerDAO alloc] init];
+    likeButton.selected = [dao findBlogger:self.bloggerModel] != nil;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:likeButton];
+    self.navigationItem.rightBarButtonItem = item;
+
     self.clearsSelectionOnViewWillAppear = NO;
 
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
@@ -43,9 +52,14 @@
     [self.tableView.header beginRefreshing];
 }
 
-- (IBAction)likeBloggerAction:(UIBarButtonItem *)sender {
+- (void)likeButtonAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
     BloggerDAO *dao = [[BloggerDAO alloc] init];
-    [dao insertBlogger:self.bloggerModel];
+    if (sender.selected) {
+        [dao insertBlogger:self.bloggerModel];
+    } else {
+        [dao deleteBlogger:self.bloggerModel];
+    }
 }
 
 - (void)requestBlogDataForHeader {

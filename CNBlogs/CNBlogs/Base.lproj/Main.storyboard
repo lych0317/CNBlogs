@@ -162,13 +162,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="YTx-l7-GpO">
-                        <barButtonItem key="rightBarButtonItem" title="收藏" id="ef0-wq-PF4">
-                            <connections>
-                                <action selector="likeBloggerAction:" destination="qyA-cA-eYi" id="czF-Be-b9l"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="YTx-l7-GpO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="B9t-ui-kqL" kind="show" identifier="BloggerToContentSegue" id="Kez-o4-FF9"/>
@@ -461,6 +455,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="wHM-vU-S8s"/>
         <segue reference="3rK-Qv-5vf"/>
-        <segue reference="VWs-S1-24F"/>
+        <segue reference="Kez-o4-FF9"/>
     </inferredMetricsTieBreakers>
 </document>

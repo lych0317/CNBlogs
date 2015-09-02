@@ -72,7 +72,7 @@
         MyLogError(@"查询将要删除的blog时失败：%@", error.description);
         return -1;
     } else {
-        MyLogError(@"未查询到将要删除的数据");
+        MyLogError(@"未查询到将要删除的blog");
         return -1;
     }
     return 0;
@@ -111,12 +111,16 @@
     NSError *error = nil;
     NSArray *listData = [context executeFetchRequest:fetchRequest error:&error];
 
-    NSMutableArray *retArray = [NSMutableArray arrayWithCapacity:listData.count];
-
-    for (BlogEntiry *blogEntity in listData) {
-        [retArray addObject:[self blogModelFromEntity:blogEntity]];
+    if (listData.count > 0) {
+        NSMutableArray *retArray = [NSMutableArray arrayWithCapacity:listData.count];
+        for (BlogEntiry *blogEntity in listData) {
+            [retArray addObject:[self blogModelFromEntity:blogEntity]];
+        }
+        return retArray;
+    } else if (error) {
+        MyLogError(@"查询blog失败：%@", error.description);
     }
-    return retArray;
+    return @[];
 }
 
 - (BlogModel *)blogModelFromEntity:(BlogEntiry *)blogEntity {

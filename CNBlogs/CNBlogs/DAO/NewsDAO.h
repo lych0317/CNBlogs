@@ -8,6 +8,13 @@
 
 #import "CoreDataDAO.h"
 
+@class NewsModel;
+
 @interface NewsDAO : CoreDataDAO
+
+- (NSInteger)insertNews:(NewsModel *)newsModel;
+- (NSInteger)deleteNews:(NewsModel *)newsModel;
+- (NewsModel *)findNews:(NewsModel *)newsModel;
+- (NSArray *)findAllNews;
 
 @end
