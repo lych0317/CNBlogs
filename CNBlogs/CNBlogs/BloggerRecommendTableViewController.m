@@ -79,7 +79,7 @@
 
     }];
     cell.titleLabel.text = model.title;
-    cell.updatedLabel.text = [model.updated stringWithFormate:yyMMddHHmm];
+    cell.updatedLabel.text = [model.updateDate stringWithFormate:yyMMddHHmm];
     cell.postCountLabel.text = [model.postCount stringValue];
     return cell;
 }

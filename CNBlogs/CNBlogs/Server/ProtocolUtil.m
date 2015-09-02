@@ -48,7 +48,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
 + (RKObjectMapping *)blogModelMapping {
     RKObjectMapping *blogMapping = [RKObjectMapping mappingForClass:[BlogModel class]];
-    [blogMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"published", @"updated.text": @"updated", @"link.href": @"link", @"blogapp.text": @"blogapp", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments"}];
+    [blogMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"publishDate", @"updated.text": @"updateDate", @"link.href": @"link", @"blogapp.text": @"blogapp", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments"}];
     [blogMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"author" toKeyPath:@"author" withMapping:[self authorModelMapping]]];
     return blogMapping;
 }
@@ -146,7 +146,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
 + (RKObjectMapping *)newsModelMapping {
     RKObjectMapping *newsMapping = [RKObjectMapping mappingForClass:[NewsModel class]];
-    [newsMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"published", @"updated.text": @"updated", @"link.href": @"link", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments", @"topic.text": @"topic", @"topicIcon.text": @"topicIcon", @"sourceName.text": @"sourceName"}];
+    [newsMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"summary.text": @"summary", @"published.text": @"publishDate", @"updated.text": @"updateDate", @"link.href": @"link", @"diggs.text": @"diggs", @"views.text": @"views", @"comments.text": @"comments", @"topic.text": @"topic", @"topicIcon.text": @"topicIcon", @"sourceName.text": @"sourceName"}];
     return newsMapping;
 }
 
@@ -200,7 +200,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
 + (RKObjectMapping *)bloggerModelMapping {
     RKObjectMapping *bloggerMapping = [RKObjectMapping mappingForClass:[BloggerModel class]];
-    [bloggerMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"updated.text": @"updated", @"link.href": @"link", @"blogapp.text": @"blogapp", @"avatar.text": @"avatar", @"postcount.text": @"postCount"}];
+    [bloggerMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"updated.text": @"updateDate", @"link.href": @"link", @"blogapp.text": @"blogapp", @"avatar.text": @"avatar", @"postcount.text": @"postCount"}];
     return bloggerMapping;
 }
 

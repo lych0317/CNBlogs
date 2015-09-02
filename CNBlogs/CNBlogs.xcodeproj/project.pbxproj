@@ -40,6 +40,11 @@
 		6B57461E1B946AF4009C1C54 /* LikedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B57461D1B946AF4009C1C54 /* LikedViewController.m */; };
 		6B5746211B954D28009C1C54 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746201B954D28009C1C54 /* NSString+Html.m */; };
 		6B5746771B9574A9009C1C54 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 6B5746741B9574A9009C1C54 /* html */; };
+		6B57468D1B95E0C8009C1C54 /* CoreDataDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B57468C1B95E0C8009C1C54 /* CoreDataDAO.m */; };
+		6B5746901B95E1E9009C1C54 /* BloggerDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B57468F1B95E1E9009C1C54 /* BloggerDAO.m */; };
+		6B5746931B95E716009C1C54 /* LikedBloggerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746921B95E716009C1C54 /* LikedBloggerTableViewController.m */; };
+		6B5746971B95E992009C1C54 /* BloggerEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746961B95E992009C1C54 /* BloggerEntity.m */; };
+		6B57469A1B9690D6009C1C54 /* LikedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5746991B9690D6009C1C54 /* LikedTableViewController.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -124,6 +129,16 @@
 		6B57461F1B954D28009C1C54 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		6B5746201B954D28009C1C54 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		6B5746741B9574A9009C1C54 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		6B57468B1B95E0C8009C1C54 /* CoreDataDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataDAO.h; sourceTree = "<group>"; };
+		6B57468C1B95E0C8009C1C54 /* CoreDataDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataDAO.m; sourceTree = "<group>"; };
+		6B57468E1B95E1E9009C1C54 /* BloggerDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerDAO.h; sourceTree = "<group>"; };
+		6B57468F1B95E1E9009C1C54 /* BloggerDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerDAO.m; sourceTree = "<group>"; };
+		6B5746911B95E716009C1C54 /* LikedBloggerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikedBloggerTableViewController.h; sourceTree = "<group>"; };
+		6B5746921B95E716009C1C54 /* LikedBloggerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedBloggerTableViewController.m; sourceTree = "<group>"; };
+		6B5746951B95E992009C1C54 /* BloggerEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerEntity.h; sourceTree = "<group>"; };
+		6B5746961B95E992009C1C54 /* BloggerEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerEntity.m; sourceTree = "<group>"; };
+		6B5746981B9690D6009C1C54 /* LikedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikedTableViewController.h; sourceTree = "<group>"; };
+		6B5746991B9690D6009C1C54 /* LikedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikedTableViewController.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +185,8 @@
 		6B44B8AF1B8D52FA00ED4096 /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				6B57468A1B95E003009C1C54 /* DAO */,
+				6B5746941B95E961009C1C54 /* Entity */,
 				6B44B8C61B8D5F7300ED4096 /* Server */,
 				6B44B8B31B8D538100ED4096 /* Model */,
 			);
@@ -308,6 +325,10 @@
 			children = (
 				6B57461C1B946AF4009C1C54 /* LikedViewController.h */,
 				6B57461D1B946AF4009C1C54 /* LikedViewController.m */,
+				6B5746981B9690D6009C1C54 /* LikedTableViewController.h */,
+				6B5746991B9690D6009C1C54 /* LikedTableViewController.m */,
+				6B5746911B95E716009C1C54 /* LikedBloggerTableViewController.h */,
+				6B5746921B95E716009C1C54 /* LikedBloggerTableViewController.m */,
 			);
 			name = Liked;
 			sourceTree = "<group>";
@@ -318,6 +339,26 @@
 				6B5746741B9574A9009C1C54 /* html */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		6B57468A1B95E003009C1C54 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				6B57468B1B95E0C8009C1C54 /* CoreDataDAO.h */,
+				6B57468C1B95E0C8009C1C54 /* CoreDataDAO.m */,
+				6B57468E1B95E1E9009C1C54 /* BloggerDAO.h */,
+				6B57468F1B95E1E9009C1C54 /* BloggerDAO.m */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		6B5746941B95E961009C1C54 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				6B5746951B95E992009C1C54 /* BloggerEntity.h */,
+				6B5746961B95E992009C1C54 /* BloggerEntity.m */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		6BCE9AF31B8C7C6F007AC2EC = {
@@ -539,11 +580,14 @@
 				6B44B90B1B8ED33A00ED4096 /* BloggerRecommendTableViewController.m in Sources */,
 				6B2659EE1B90724600ABA509 /* SearchBlogViewController.m in Sources */,
 				6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */,
+				6B5746901B95E1E9009C1C54 /* BloggerDAO.m in Sources */,
 				6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */,
 				6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */,
 				6B2659F11B9078AE00ABA509 /* BloggerTableViewController.m in Sources */,
 				6B44B9031B8EBDFD00ED4096 /* RankingViewController.m in Sources */,
 				6B44B9151B8ED5A500ED4096 /* BloggerTableViewCell.m in Sources */,
+				6B5746931B95E716009C1C54 /* LikedBloggerTableViewController.m in Sources */,
+				6B57469A1B9690D6009C1C54 /* LikedTableViewController.m in Sources */,
 				6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */,
 				6B44B8AE1B8D504F00ED4096 /* README.md in Sources */,
 				6B2659E01B8F1DF800ABA509 /* RecommendIn10DTableViewController.m in Sources */,
@@ -554,6 +598,7 @@
 				6B44B8BF1B8D56FA00ED4096 /* NewsModel.m in Sources */,
 				6B44B8E11B8DC10B00ED4096 /* NewsTableViewController.m in Sources */,
 				6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */,
+				6B5746971B95E992009C1C54 /* BloggerEntity.m in Sources */,
 				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
 				6B57461E1B946AF4009C1C54 /* LikedViewController.m in Sources */,
 				6B44B8E71B8EAF3800ED4096 /* AppTabBarViewController.m in Sources */,
@@ -561,6 +606,7 @@
 				6B44B8B91B8D553500ED4096 /* BlogModel.m in Sources */,
 				6B2659E31B8FF50500ABA509 /* NewsRecommendTableViewController.m in Sources */,
 				6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */,
+				6B57468D1B95E0C8009C1C54 /* CoreDataDAO.m in Sources */,
 				6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */,
 				6B5745D91B93FBCA009C1C54 /* NewsViewController.m in Sources */,
 			);

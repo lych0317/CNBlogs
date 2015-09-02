@@ -12,7 +12,7 @@
 
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSDate *updated;
+@property (nonatomic, copy) NSDate *updateDate;
 @property (nonatomic, copy) NSString *link;
 @property (nonatomic, copy) NSString *blogapp;
 @property (nonatomic, copy) NSString *avatar;

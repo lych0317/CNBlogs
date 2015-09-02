@@ -7,6 +7,11 @@
 //
 
 #import "LikedViewController.h"
+#import "LikedBloggerTableViewController.h"
+
+#import "BloggerTableViewController.h"
+#import "BlogViewController.h"
+#import "NewsViewController.h"
 
 @interface LikedViewController ()
 
@@ -16,17 +21,36 @@
 
 - (void)viewDidLoad {
     self.titleArray = @[NSLocalizedString(@"博主", @""), NSLocalizedString(@"博客", @""), NSLocalizedString(@"新闻", @"")];
+
+    __weak LikedViewController *weakSelf = self;
+    LikedBloggerTableViewController *bloggerViewController = [[LikedBloggerTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    bloggerViewController.didSelectBloggerBlock = ^(LikedBloggerTableViewController *viewController, BloggerModel *model) {
+        [weakSelf performSegueWithIdentifier:@"LikedToBloggerSegue" sender:model];
+    };
+
+    self.viewControllerArray = @[bloggerViewController];
     [super viewDidLoad];
 }
 
-/*
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    LikedTableViewController *viewController = self.viewControllerArray[self.segmentedControl.selectedSegmentIndex];
+    [viewController reloadData];
+}
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"LikedToBloggerSegue"]) {
+        BloggerTableViewController *viewController = segue.destinationViewController;
+        viewController.bloggerModel = sender;
+    } else if ([segue.identifier isEqualToString:@"LikedToBlogSegue"]) {
+        BlogViewController *viewController = segue.destinationViewController;
+        viewController.blogModel = sender;
+    } else if ([segue.identifier isEqualToString:@"LikedToNewsSegue"]) {
+        NewsViewController *viewController = segue.destinationViewController;
+        viewController.newsModel = sender;
+    }
 }
-*/
 
 @end

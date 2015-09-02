@@ -12,6 +12,7 @@
 #import "BloggerModel.h"
 #import "BlogTableViewCell.h"
 #import "BlogViewController.h"
+#import "BloggerDAO.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface BloggerTableViewController ()
@@ -43,6 +44,8 @@
 }
 
 - (IBAction)likeBloggerAction:(UIBarButtonItem *)sender {
+    BloggerDAO *dao = [[BloggerDAO alloc] init];
+    [dao insertBlogger:self.bloggerModel];
 }
 
 - (void)requestBlogDataForHeader {
@@ -83,7 +86,7 @@
     cell.titleLabel.text = model.title;
     cell.summaryLabel.text = model.summary;
     cell.authorLabel.text = model.author.name;
-    cell.publishedLabel.text = [model.published stringWithFormate:yyMMddHHmm];
+    cell.publishedLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
     cell.diggLabel.text = [model.diggs stringValue];
     cell.viewLabel.text = [model.views stringValue];
     cell.commentLabel.text = [model.comments stringValue];
