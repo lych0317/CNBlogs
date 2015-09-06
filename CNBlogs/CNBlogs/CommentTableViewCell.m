@@ -7,17 +7,28 @@
 //
 
 #import "CommentTableViewCell.h"
+#import "CommentModel.h"
+
+@interface CommentTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *publishDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@end
 
 @implementation CommentTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)setupCellWithCommentModel:(CommentModel *)model {
+    self.authorLabel.text = model.authorModel.name;
+    self.publishDateLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
+    self.contentLabel.text = [model.content deleteHTMLTag];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (CGFloat)cellHeightForCommentModel:(CommentModel *)model tableWidth:(CGFloat)width {
+    [self setupCellWithCommentModel:model];
+    self.contentLabel.preferredMaxLayoutWidth = width - 20;
+    return [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height + 1;
 }
 
 @end

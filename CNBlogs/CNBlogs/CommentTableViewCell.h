@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class CommentModel;
+
 @interface CommentTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *publishDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+- (void)setupCellWithCommentModel:(CommentModel *)model;
+- (CGFloat)cellHeightForCommentModel:(CommentModel *)model tableWidth:(CGFloat)width;
 
 @end

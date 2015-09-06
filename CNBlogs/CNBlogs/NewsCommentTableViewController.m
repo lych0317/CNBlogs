@@ -77,9 +77,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
     CommentModel *model = self.commentModelArray[indexPath.row];
-    cell.authorLabel.text = model.authorModel.name;
-    cell.publishDateLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
-    cell.contentLabel.text = [model.content deleteHTMLTag];
+    [cell setupCellWithCommentModel:model];
     return cell;
 }
 
@@ -91,11 +89,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentModel *model = self.commentModelArray[indexPath.row];
-    self.prototypeCell.authorLabel.text = model.authorModel.name;
-    self.prototypeCell.publishDateLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
-    self.prototypeCell.contentLabel.text = [model.content deleteHTMLTag];
-    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return 1 + size.height;
+    return [self.prototypeCell cellHeightForCommentModel:model tableWidth:CGRectGetWidth(tableView.frame)];
 }
 
 /*
