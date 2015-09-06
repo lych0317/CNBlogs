@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewController.h"
+#import "NewsCommentTableViewController.h"
 #import "ContentBarView.h"
 #import "NewsModel.h"
 #import "ProtocolUtil.h"
@@ -49,6 +50,10 @@
     }
 }
 
+- (void)commentButtonAction:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"NewsToCommentSegue" sender:self.newsModel];
+}
+
 - (void)loadWebView {
     NSDictionary *dictionary = @{@"title": self.newsModel.title, @"sourceName": self.newsModel.sourceName, @"submitTime": [self.newsModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.newsModel.contentModel.content};
 
@@ -60,19 +65,19 @@
     [ProtocolUtil getNewsContentWithID:self.newsModel.identifier success:^(id data, id identifier) {
         [self.contentWebView.scrollView.header endRefreshing];
         self.newsModel.contentModel = data;
+        [self loadWebView];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.contentWebView.scrollView.header endRefreshing];
     }];
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"NewsToCommentSegue"]) {
+        NewsCommentTableViewController *viewController = segue.destinationViewController;
+        viewController.newsModel = sender;
+    }
 }
-*/
 
 @end

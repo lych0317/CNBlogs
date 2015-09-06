@@ -7,8 +7,18 @@
 //
 
 #import "NewsCommentTableViewController.h"
+#import "CommentTableViewCell.h"
+#import "NewsModel.h"
+#import "CommentModel.h"
+#import "ProtocolUtil.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface NewsCommentTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray *commentModelArray;
+@property (nonatomic, assign) NSInteger pageIndex;
+
+@property (nonatomic, strong) CommentTableViewCell *prototypeCell;
 
 @end
 
@@ -16,76 +26,77 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.clearsSelectionOnViewWillAppear = NO;
+
+    [self.tableView registerNib:[UINib nibWithNibName:@"CommentTableViewCell" bundle:nil] forCellReuseIdentifier:@"CommentTableViewCell"];
+
+    self.prototypeCell = [[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell" owner:self options:nil].firstObject;
+
+    __weak NewsCommentTableViewController *weakSelf = self;
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf requestCommentDataForHeader];
+    }];
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf requestCommentDataForFooter];
+    }];
+
+    [self.tableView.header beginRefreshing];
+}
+- (void)requestCommentDataForHeader {
+    self.pageIndex = 1;
+    self.commentModelArray = [NSMutableArray array];
+    [self.tableView reloadData];
+    [self requestCommentData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)requestCommentDataForFooter {
+    [self requestCommentData];
+}
+
+- (void)requestCommentData {
+    [ProtocolUtil getNewsCommentListWithID:self.newsModel.identifier pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
+        self.pageIndex++;
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+        NSArray *array = data;
+        [self.commentModelArray addObjectsFromArray:array];
+        self.tableView.footer.hidden = array.count < PageCount;
+        [self.tableView reloadData];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [self.tableView.header endRefreshing];
+        [self.tableView.footer endRefreshing];
+    }];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.commentModelArray.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
+    CommentModel *model = self.commentModelArray[indexPath.row];
+    cell.authorLabel.text = model.authorModel.name;
+    cell.publishDateLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
+    cell.contentLabel.text = [model.content deleteHTMLTag];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+#pragma mark - Table view delegate
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommentModel *model = self.commentModelArray[indexPath.row];
+    self.prototypeCell.authorLabel.text = model.authorModel.name;
+    self.prototypeCell.publishDateLabel.text = [model.publishDate stringWithFormate:yyMMddHHmm];
+    self.prototypeCell.contentLabel.text = [model.content deleteHTMLTag];
+    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return 1 + size.height;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

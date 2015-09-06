@@ -19,9 +19,11 @@ typedef void(^ProtocolFailureBlock)(RKObjectRequestOperation *operation, NSError
 + (void)getBlogContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 + (void)getBloggerListWithSearchText:(NSString *)text success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 + (void)getBlogListWithBlogapp:(NSString *)blogapp pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
++ (void)getBlogCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 
 + (void)getNewsListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 + (void)getNewsContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
++ (void)getNewsCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 
 + (void)getBloggerRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;
 + (void)getViewIn48HListWithCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure;

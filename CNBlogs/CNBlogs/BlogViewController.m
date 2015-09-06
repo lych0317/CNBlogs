@@ -7,6 +7,7 @@
 //
 
 #import "BlogViewController.h"
+#import "BlogCommentTableViewController.h"
 #import "ContentBarView.h"
 #import "ProtocolUtil.h"
 #import "BlogContentModel.h"
@@ -49,6 +50,10 @@
     }
 }
 
+- (void)commentButtonAction:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"BlogToCommentSegue" sender:self.blogModel];
+}
+
 - (void)loadWebView {
     NSDictionary *dictionary = @{@"title": self.blogModel.title, @"authorName": self.blogModel.authorModel.name, @"publishedTime": [self.blogModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.blogModel.contentModel.content};
 
@@ -66,14 +71,12 @@
     }];
 }
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"BlogToCommentSegue"]) {
+        BlogCommentTableViewController *viewController = segue.destinationViewController;
+        viewController.blogModel = sender;
+    }
 }
-*/
 
 @end

@@ -13,9 +13,9 @@
 
 @property (nonatomic, copy) NSNumber *identifier;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSDate *published;
-@property (nonatomic, copy) NSDate *updated;
-@property (nonatomic, strong) AuthorModel *author;
+@property (nonatomic, copy) NSDate *publishDate;
+@property (nonatomic, copy) NSDate *updateDate;
+@property (nonatomic, strong) AuthorModel *authorModel;
 @property (nonatomic, copy) NSString *content;
 
 @end

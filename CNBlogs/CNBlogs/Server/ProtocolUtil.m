@@ -12,6 +12,7 @@
 #import "NewsModel.h"
 #import "NewsContentModel.h"
 #import "BloggerModel.h"
+#import "CommentModel.h"
 
 static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
 
@@ -123,6 +124,34 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
++ (void)getBlogCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
+    RKObjectMapping *responseMapping = [self commentModelMapping];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
+
+    NSString *path = [NSString stringWithFormat:@"%@blog/post/%@/comments/%@/%@", protocolBaseUrl, identifier, index, count];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:path]];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        if (success) {
+            success(mappingResult.array, nil);
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+    [operation start];
+}
+
++ (RKObjectMapping *)commentModelMapping {
+    RKObjectMapping *commentMapping = [RKObjectMapping mappingForClass:[CommentModel class]];
+    [commentMapping addAttributeMappingsFromDictionary:@{@"id.text": @"identifier", @"title.text": @"title", @"published.text": @"publishDate", @"updated.text": @"updateDate", @"content.text": @"content"}];
+    [commentMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"author" toKeyPath:@"authorModel" withMapping:[self authorModelMapping]]];
+    return commentMapping;
+}
+
 + (void)getNewsListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self newsModelMapping];
@@ -162,6 +191,27 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         if (success) {
             success(mappingResult.firstObject, nil);
+        }
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (failure) {
+            failure(operation, error);
+        }
+    }];
+    [operation start];
+}
+
++ (void)getNewsCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
+    [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
+    RKObjectMapping *responseMapping = [self commentModelMapping];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
+
+    NSString *path = [NSString stringWithFormat:@"%@news/item/%@/comments/%@/%@", protocolBaseUrl, identifier, index, count];
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:path]];
+    RKObjectRequestOperation *operation = [[RKObjectRequestOperation alloc] initWithRequest:request responseDescriptors:@[responseDescriptor]];
+    [operation setCompletionBlockWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        if (success) {
+            success(mappingResult.array, nil);
         }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (failure) {

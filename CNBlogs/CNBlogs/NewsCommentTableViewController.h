@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class NewsModel;
+
 @interface NewsCommentTableViewController : UITableViewController
+
+@property (nonatomic, strong) NewsModel *newsModel;
 
 @end

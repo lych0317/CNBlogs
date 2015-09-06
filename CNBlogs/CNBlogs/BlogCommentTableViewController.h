@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class BlogModel;
+
 @interface BlogCommentTableViewController : UITableViewController
+
+@property (nonatomic, strong) BlogModel *blogModel;
 
 @end

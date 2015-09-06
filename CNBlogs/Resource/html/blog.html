@@ -1,10 +1,12 @@
-{{$ body }}
-<div id="title_div">
-    <b>{{title}}</b>
-    <div id="pub_info" style="font-size: 12px;">
-        <a href="http://my.oschina.net/u/{{authorID}}" class="author">{{authorName}}</a> 发表于 {{publishedTime}}
+{{< html/base }}
+    {{$ body }}
+    <div id="title_div">
+        <b>{{title}}</b>
+        <div id="pub_info" style="font-size: 12px;">
+            <a href="http://my.oschina.net/u/{{authorID}}" class="author">{{authorName}}</a> 发表于 {{publishedTime}}
+        </div>
     </div>
-</div>
 
-<main>{{{content}}}</main>
-{{/ body }}
+    <main>{{{content}}}</main>
+    {{/}}
+{{/}}
