@@ -1,5 +1,5 @@
 //
-//  ContentViewController.h
+//  UIContentViewController.h
 //  CNBlogs
 //
 //  Created by 李远超 on 15/9/2.
@@ -10,7 +10,7 @@
 
 @class ContentBarView;
 
-@interface ContentViewController : UIViewController
+@interface UIContentViewController : UIViewController
 
 @property (nonatomic, strong) UIWebView *contentWebView;
 @property (nonatomic, strong) ContentBarView *contentBarView;

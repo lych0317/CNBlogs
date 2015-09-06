@@ -1,18 +1,18 @@
 //
-//  SwipeViewController.m
+//  UISwipeViewController.m
 //  CNBlogs
 //
 //  Created by 李远超 on 15/8/31.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "SwipeViewController.h"
+#import "UISwipeViewController.h"
 
-@interface SwipeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface UISwipeViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
 
-@implementation SwipeViewController
+@implementation UISwipeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

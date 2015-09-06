@@ -6,10 +6,10 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "ContentViewController.h"
+#import "UIContentViewController.h"
 #import "BlogModel.h"
 
-@interface BlogViewController : ContentViewController
+@interface BlogViewController : UIContentViewController
 
 @property (nonatomic, strong) BlogModel *blogModel;
 

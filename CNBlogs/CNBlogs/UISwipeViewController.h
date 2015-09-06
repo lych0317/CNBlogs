@@ -1,5 +1,5 @@
 //
-//  SwipeViewController.h
+//  UISwipeViewController.h
 //  CNBlogs
 //
 //  Created by 李远超 on 15/8/31.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SwipeViewController : UIViewController
+@interface UISwipeViewController : UIViewController
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UICollectionView *collectionView;

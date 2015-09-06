@@ -1,19 +1,19 @@
 //
-//  ContentViewController.m
+//  UIContentViewController.m
 //  CNBlogs
 //
 //  Created by 李远超 on 15/9/2.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "ContentViewController.h"
+#import "UIContentViewController.h"
 #import "ContentBarView.h"
 
-@interface ContentViewController ()
+@interface UIContentViewController ()
 
 @end
 
-@implementation ContentViewController
+@implementation UIContentViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
