@@ -8,7 +8,7 @@
 
 #import "NewsViewController.h"
 #import "NewsCommentTableViewController.h"
-#import "ContentBarView.h"
+#import "UIContentToolBar.h"
 #import "NewsModel.h"
 #import "ProtocolUtil.h"
 #import "NewsContentModel.h"
@@ -37,7 +37,7 @@
     }
 
     NewsDAO *dao = [[NewsDAO alloc] init];
-    self.contentBarView.likeButton.selected = [dao findNews:self.newsModel] != nil;
+    self.contentToolBar.likeButton.selected = [dao findNews:self.newsModel] != nil;
 }
 
 - (void)likeButtonAction:(UIButton *)sender {

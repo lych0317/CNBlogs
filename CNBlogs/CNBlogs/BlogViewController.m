@@ -8,7 +8,7 @@
 
 #import "BlogViewController.h"
 #import "BlogCommentTableViewController.h"
-#import "ContentBarView.h"
+#import "UIContentToolBar.h"
 #import "ProtocolUtil.h"
 #import "BlogContentModel.h"
 #import "BlogDAO.h"
@@ -37,7 +37,7 @@
     }
 
     BlogDAO *dao = [[BlogDAO alloc] init];
-    self.contentBarView.likeButton.selected = [dao findBlog:self.blogModel] != nil;
+    self.contentToolBar.likeButton.selected = [dao findBlog:self.blogModel] != nil;
 }
 
 - (void)likeButtonAction:(UIButton *)sender {

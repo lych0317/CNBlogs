@@ -8,12 +8,12 @@
 
 #import "UIBaseViewController.h"
 
-@class ContentBarView;
+@class UIContentToolBar;
 
 @interface UIContentViewController : UIBaseViewController
 
 @property (nonatomic, strong) UIWebView *contentWebView;
-@property (nonatomic, strong) ContentBarView *contentBarView;
+@property (nonatomic, strong) UIContentToolBar *contentToolBar;
 
 - (void)likeButtonAction:(UIButton *)sender;
 - (void)shareButtonAction:(UIButton *)sender;
