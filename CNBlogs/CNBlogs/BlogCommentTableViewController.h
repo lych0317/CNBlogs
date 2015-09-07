@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
 @class BlogModel;
 
-@interface BlogCommentTableViewController : UITableViewController
+@interface BlogCommentTableViewController : UIPageTableViewController
 
 @property (nonatomic, strong) BlogModel *blogModel;
 

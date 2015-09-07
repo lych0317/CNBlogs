@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIBaseViewController.h"
 
-@interface SearchBlogViewController : UIViewController
+@interface SearchBlogViewController : UIBaseViewController
 
 @end

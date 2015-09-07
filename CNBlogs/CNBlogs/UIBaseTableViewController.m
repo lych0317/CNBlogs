@@ -1,22 +1,26 @@
 //
-//  AppTabBarViewController.m
+//  UIBaseTableViewController.m
 //  CNBlogs
 //
-//  Created by 李远超 on 15/8/27.
+//  Created by 李远超 on 15/9/7.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "AppTabBarViewController.h"
+#import "UIBaseTableViewController.h"
 
-@interface AppTabBarViewController ()
+@interface UIBaseTableViewController ()
 
 @end
 
-@implementation AppTabBarViewController
+@implementation UIBaseTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.clearsSelectionOnViewWillAppear = NO;
+
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor whiteColor];
+    self.tableView.tableFooterView = view;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,15 +34,5 @@
     [MobClick endLogPageView:NSStringFromClass([self class])];
     MyLogInfo(@"end log page view %@", NSStringFromClass([self class]));
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

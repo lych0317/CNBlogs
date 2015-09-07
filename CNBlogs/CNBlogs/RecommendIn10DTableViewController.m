@@ -7,15 +7,11 @@
 //
 
 #import "RecommendIn10DTableViewController.h"
-#import "ProtocolUtil.h"
 #import "BlogModel.h"
 #import "BlogTableViewCell.h"
 #import "BlogViewController.h"
-#import <MJRefresh/MJRefresh.h>
 
 @interface RecommendIn10DTableViewController ()
-
-@property (nonatomic, strong) NSArray *blogModelArray;
 
 @end
 
@@ -23,37 +19,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
-
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
 
-    __weak RecommendIn10DTableViewController *weakSelf = self;
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestBlogData];
-    }];
+    self.tableView.footer = nil;
 
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestBlogData {
-    [ProtocolUtil getRecommendIn10DListWithCount:@(20) success:^(id data, id identifier) {
-        [self.tableView.header endRefreshing];
-        self.blogModelArray = data;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [self.tableView.header endRefreshing];
-    }];
+- (void)requestData {
+    [ProtocolUtil getRecommendIn10DListWithCount:@(20) success:self.successBlock failure:self.failureBlock];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.blogModelArray.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BlogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlogTableViewCell" forIndexPath:indexPath];
-    BlogModel *model = self.blogModelArray[indexPath.row];
+    BlogModel *model = self.dataArray[indexPath.row];
     cell.titleLabel.text = model.title;
     cell.summaryLabel.text = model.summary;
     cell.authorLabel.text = model.authorModel.name;
@@ -73,7 +54,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (self.didSelectBlogBlock) {
-        BlogModel *model = self.blogModelArray[indexPath.row];
+        BlogModel *model = self.dataArray[indexPath.row];
         self.didSelectBlogBlock(self, model);
     }
 }

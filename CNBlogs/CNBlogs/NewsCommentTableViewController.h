@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
 @class NewsModel;
 
-@interface NewsCommentTableViewController : UITableViewController
+@interface NewsCommentTableViewController : UIPageTableViewController
 
 @property (nonatomic, strong) NewsModel *newsModel;
 

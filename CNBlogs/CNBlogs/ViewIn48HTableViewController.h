@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
 @class BlogModel, ViewIn48HTableViewController;
 
 typedef void(^ViewIn48HDidSelectBlogBlock)(ViewIn48HTableViewController *viewController, BlogModel *model);
 
-@interface ViewIn48HTableViewController : UITableViewController
+@interface ViewIn48HTableViewController : UIPageTableViewController
 
 @property (nonatomic, copy) ViewIn48HDidSelectBlogBlock didSelectBlogBlock;
 

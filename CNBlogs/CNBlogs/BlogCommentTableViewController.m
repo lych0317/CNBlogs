@@ -11,13 +11,8 @@
 #import "BlogModel.h"
 #import "AuthorModel.h"
 #import "CommentModel.h"
-#import "ProtocolUtil.h"
-#import <MJRefresh/MJRefresh.h>
 
 @interface BlogCommentTableViewController ()
-
-@property (nonatomic, strong) NSMutableArray *commentModelArray;
-@property (nonatomic, assign) NSInteger pageIndex;
 
 @property (nonatomic, strong) CommentTableViewCell *prototypeCell;
 
@@ -27,58 +22,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
-
     [self.tableView registerNib:[UINib nibWithNibName:@"CommentTableViewCell" bundle:nil] forCellReuseIdentifier:@"CommentTableViewCell"];
 
     self.prototypeCell = [[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell" owner:self options:nil].firstObject;
 
-    __weak BlogCommentTableViewController *weakSelf = self;
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestCommentDataForHeader];
-    }];
-    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf requestCommentDataForFooter];
-    }];
-
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestCommentDataForHeader {
-    self.pageIndex = 1;
-    self.commentModelArray = [NSMutableArray array];
-    [self.tableView reloadData];
-    [self requestCommentData];
-}
-
-- (void)requestCommentDataForFooter {
-    [self requestCommentData];
-}
-
-- (void)requestCommentData {
-    [ProtocolUtil getBlogCommentListWithID:self.blogModel.identifier pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
-        self.pageIndex++;
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-        NSArray *array = data;
-        [self.commentModelArray addObjectsFromArray:array];
-        self.tableView.footer.hidden = array.count < PageCount;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-    }];
+- (void)requestData {
+    [ProtocolUtil getBlogCommentListWithID:self.blogModel.identifier pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:self.successBlock failure:self.failureBlock];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.commentModelArray.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentTableViewCell" forIndexPath:indexPath];
-    CommentModel *model = self.commentModelArray[indexPath.row];
+    CommentModel *model = self.dataArray[indexPath.row];
     [cell setupCellWithCommentModel:model];
     return cell;
 }
@@ -90,7 +49,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CommentModel *model = self.commentModelArray[indexPath.row];
+    CommentModel *model = self.dataArray[indexPath.row];
     return [self.prototypeCell cellHeightForCommentModel:model tableWidth:CGRectGetWidth(tableView.frame)];
 }
 

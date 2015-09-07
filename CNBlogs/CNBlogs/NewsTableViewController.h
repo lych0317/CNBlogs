@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
-@interface NewsTableViewController : UITableViewController
+@interface NewsTableViewController : UIPageTableViewController
 
 @end

@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "CoreDataDAO.h"
 #import <RestKit/RestKit.h>
-#import <UMengAnalytics/MobClick.h>
 #import <UMengSocial/UMSocial.h>
 
 @interface AppDelegate ()

@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
 @class BloggerModel, BloggerRecommendTableViewController;
 
 typedef void(^BloggerRecommendDidSelectBloggerBlock)(BloggerRecommendTableViewController *viewController, BloggerModel *model);
 
-@interface BloggerRecommendTableViewController : UITableViewController
+@interface BloggerRecommendTableViewController : UIPageTableViewController
 
 @property (nonatomic, copy) BloggerRecommendDidSelectBloggerBlock didSelectBloggerBlock;
 

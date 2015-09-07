@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
 @class NewsModel, NewsRecommendTableViewController;
 
 typedef void(^NewsRecommendDidSelectNewsBlock)(NewsRecommendTableViewController *viewController, NewsModel *model);
 
-@interface NewsRecommendTableViewController : UITableViewController
+@interface NewsRecommendTableViewController : UIPageTableViewController
 
 @property (nonatomic, copy) NewsRecommendDidSelectNewsBlock didSelectNewsBlock;
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIBaseViewController.h"
 
-@interface UISwipeViewController : UIViewController
+@interface UISwipeViewController : UIBaseViewController
 
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UICollectionView *collectionView;

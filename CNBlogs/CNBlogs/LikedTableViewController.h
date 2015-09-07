@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIBaseTableViewController.h"
 
-@interface LikedTableViewController : UITableViewController
+@interface LikedTableViewController : UIBaseTableViewController
 
 - (void)reloadData;
 

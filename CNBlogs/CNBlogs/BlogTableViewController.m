@@ -15,65 +15,26 @@
 
 @interface BlogTableViewController ()
 
-@property (nonatomic, strong) NSMutableArray *blogModelArray;
-@property (nonatomic, assign) NSInteger pageIndex;
-
 @end
 
 @implementation BlogTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = YES;
-
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
-
-    __weak BlogTableViewController *weakSelf = self;
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf requestBlogDataForHeader];
-    }];
-    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf requestBlogDataForFooter];
-    }];
 
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestBlogDataForHeader {
-    self.pageIndex = 1;
-    self.blogModelArray = [NSMutableArray array];
-    [self.tableView reloadData];
-    [self requestBlogData];
-}
-
-- (void)requestBlogDataForFooter {
-    [self requestBlogData];
-}
-
-- (void)requestBlogData {
-    [ProtocolUtil getBlogListWithPageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
-        self.pageIndex++;
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-        NSArray *array = data;
-        [self.blogModelArray addObjectsFromArray:array];
-        self.tableView.footer.hidden = array.count < PageCount;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        [self.tableView.header endRefreshing];
-        [self.tableView.footer endRefreshing];
-    }];
+- (void)requestData {
+    [ProtocolUtil getBlogListWithPageIndex:@(self.pageIndex) pageCount:@(PageCount) success:self.successBlock failure:self.failureBlock];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.blogModelArray.count;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BlogTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BlogTableViewCell" forIndexPath:indexPath];
-    BlogModel *model = self.blogModelArray[indexPath.row];
+    BlogModel *model = self.dataArray[indexPath.row];
     cell.titleLabel.text = model.title;
     cell.summaryLabel.text = model.summary;
     cell.authorLabel.text = model.authorModel.name;
@@ -88,7 +49,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BlogModel *model = self.blogModelArray[indexPath.row];
+    BlogModel *model = self.dataArray[indexPath.row];
     [self performSegueWithIdentifier:@"BlogListToContentSegue" sender:model];
 }
 

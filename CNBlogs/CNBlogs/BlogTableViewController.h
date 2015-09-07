@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UIPageTableViewController.h"
 
-@interface BlogTableViewController : UITableViewController
+@interface BlogTableViewController : UIPageTableViewController
 
 @end
