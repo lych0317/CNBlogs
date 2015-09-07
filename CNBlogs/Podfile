@@ -13,6 +13,8 @@ pod 'MBProgressHUD'
 pod 'CocoaLumberjack'
 pod 'MJRefresh'
 pod 'GRMustache'
+pod 'UMengAnalytics'
+pod 'UMengSocial'
 
 end
 

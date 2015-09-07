@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "CoreDataDAO.h"
 #import <RestKit/RestKit.h>
+#import <UMengAnalytics/MobClick.h>
+#import <UMengSocial/UMSocial.h>
 
 @interface AppDelegate ()
 
@@ -19,7 +21,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupLogger];
+    [self setupUMeng];
     return YES;
+}
+
+- (void)setupUMeng {
+    [MobClick startWithAppkey:UMengAppKey];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [MobClick setAppVersion:version];
+
+    [UMSocialData setAppKey:UMengAppKey];
+    [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
+
+//    Class cls = NSClassFromString(@"UMANUtil");
+//    SEL deviceIDSelector = @selector(openUDIDString);
+//    NSString *deviceID = nil;
+//    if(cls && [cls respondsToSelector:deviceIDSelector]){
+//        deviceID = [cls performSelector:deviceIDSelector];
+//    }
+//    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:@{@"oid" : deviceID}
+//                                                       options:NSJSONWritingPrettyPrinted
+//                                                         error:nil];
+//
+//    NSLog(@"%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
 }
 
 - (void)setupLogger {

@@ -826,7 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Ye (Y25FCF6KPF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: yuanchao li (TRG3R9945U)";
 				GCC_PREFIX_HEADER = CNBlogs/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -837,7 +837,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f84cd7ac-c1af-4f52-acfd-09bfc9311d87";
+				PROVISIONING_PROFILE = "b50ed50f-7c9d-4041-ab98-dfdc80a1becd";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -859,7 +859,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f84cd7ac-c1af-4f52-acfd-09bfc9311d87";
+				PROVISIONING_PROFILE = "b50ed50f-7c9d-4041-ab98-dfdc80a1becd";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

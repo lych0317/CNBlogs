@@ -11,4 +11,6 @@
 
 #define PageCount 20
 
+#define UMengAppKey @"55e01dd667e58e47d2002e90"
+
 #endif
