@@ -8,6 +8,7 @@
 
 #import "AppUtil.h"
 #import <GRMustache/GRMustache.h>
+#import <UMengSocial/UMSocial.h>
 
 @implementation AppUtil
 
@@ -40,6 +41,10 @@
     toast.yOffset = -30.0f;
     toast.labelText = title;
     [toast hide:YES afterDelay:2];
+}
+
++ (void)shareText:(NSString *)text inViewController:(UIViewController *)controller {
+    [UMSocialSnsService presentSnsIconSheetView:controller appKey:UMengAppKey shareText:text shareImage:nil shareToSnsNames:[UMSocialSnsPlatformManager sharedInstance].allSnsValuesArray delegate:nil];
 }
 
 @end

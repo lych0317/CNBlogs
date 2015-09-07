@@ -50,6 +50,10 @@
     }
 }
 
+- (void)shareButtonAction:(UIButton *)sender {
+    [AppUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.newsModel.title, self.newsModel.link] inViewController:self];
+}
+
 - (void)commentButtonAction:(UIButton *)sender {
     [self performSegueWithIdentifier:@"NewsToCommentSegue" sender:self.newsModel];
 }

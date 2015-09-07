@@ -40,6 +40,8 @@
     self.failureBlock = ^(RKObjectRequestOperation *operation, NSError *error) {
         [weakSelf.tableView.header endRefreshing];
         [weakSelf.tableView.footer endRefreshing];
+        [AppUtil showToastWithTitle:error.userInfo[NSLocalizedDescriptionKey]];
+        MyLogInfo(@"%@\n%@", NSStringFromClass([weakSelf class]), error.description);
     };
 }
 

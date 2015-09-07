@@ -50,6 +50,10 @@
     }
 }
 
+- (void)shareButtonAction:(UIButton *)sender {
+    [AppUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.blogModel.title, self.blogModel.link] inViewController:self];
+}
+
 - (void)commentButtonAction:(UIButton *)sender {
     [self performSegueWithIdentifier:@"BlogToCommentSegue" sender:self.blogModel];
 }
@@ -72,6 +76,7 @@
 }
 
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"BlogToCommentSegue"]) {
         BlogCommentTableViewController *viewController = segue.destinationViewController;

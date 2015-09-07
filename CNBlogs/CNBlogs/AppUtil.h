@@ -17,4 +17,6 @@
 
 + (void)showToastWithTitle:(NSString *)title;
 
++ (void)shareText:(NSString *)text inViewController:(UIViewController *)controller;
+
 @end

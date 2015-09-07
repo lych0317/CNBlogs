@@ -29,8 +29,11 @@
     [likeButton addTarget:self action:@selector(likeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     BloggerDAO *dao = [[BloggerDAO alloc] init];
     likeButton.selected = [dao findBlogger:self.bloggerModel] != nil;
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:likeButton];
-    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *likeItem = [[UIBarButtonItem alloc] initWithCustomView:likeButton];
+
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithTitle:@"share" style:UIBarButtonItemStylePlain target:self action:@selector(shareButtonAction:)];
+
+    self.navigationItem.rightBarButtonItems = @[likeItem, shareItem];
 
     [self.tableView registerNib:[UINib nibWithNibName:@"BlogTableViewCell" bundle:nil] forCellReuseIdentifier:@"BlogTableViewCell"];
 
@@ -45,6 +48,10 @@
     } else {
         [dao deleteBlogger:self.bloggerModel];
     }
+}
+
+- (void)shareButtonAction:(UIBarButtonItem *)sender {
+    [AppUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.bloggerModel.title, self.bloggerModel.link] inViewController:self];
 }
 
 - (void)requestData {
