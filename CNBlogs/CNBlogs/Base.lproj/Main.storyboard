@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--博客园-->
@@ -429,25 +430,89 @@
         <!--更多-->
         <scene sceneID="hs9-wB-zFz">
             <objects>
-                <tableViewController id="wfx-ul-vAc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UzI-PU-u7r">
+                <tableViewController id="wfx-ul-vAc" customClass="MoreTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="25" sectionFooterHeight="30" id="UzI-PU-u7r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ciM-DI-gRj">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciM-DI-gRj" id="6Qn-Ns-Zqb">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection headerTitle="随便支持一下就好" footerTitle="同时提供功能完全一样的付费版本" id="jYV-A5-xpA">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="ciM-DI-gRj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ciM-DI-gRj" id="6Qn-Ns-Zqb">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在加载广告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxr-RK-dfp">
+                                                    <rect key="frame" x="8" y="8" width="584" height="33.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUp-MT-PVt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="wfx-ul-vAc" id="AoP-jH-MEe"/>
+                                                    </connections>
+                                                </adBannerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aUp-MT-PVt" firstAttribute="top" secondItem="6Qn-Ns-Zqb" secondAttribute="top" id="Eh4-bm-NE2"/>
+                                                <constraint firstAttribute="bottom" secondItem="aUp-MT-PVt" secondAttribute="bottom" id="Gbt-YF-r0M"/>
+                                                <constraint firstItem="aUp-MT-PVt" firstAttribute="leading" secondItem="6Qn-Ns-Zqb" secondAttribute="leading" id="RgN-QE-1Qg"/>
+                                                <constraint firstItem="Wxr-RK-dfp" firstAttribute="top" secondItem="6Qn-Ns-Zqb" secondAttribute="topMargin" id="T1L-YQ-7JS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Wxr-RK-dfp" secondAttribute="bottom" id="Vct-p0-WXH"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wxr-RK-dfp" secondAttribute="trailing" id="bHw-Ly-77b"/>
+                                                <constraint firstAttribute="trailing" secondItem="aUp-MT-PVt" secondAttribute="trailing" id="d7r-1O-i7Z"/>
+                                                <constraint firstItem="Wxr-RK-dfp" firstAttribute="leading" secondItem="6Qn-Ns-Zqb" secondAttribute="leadingMargin" id="wRK-DT-Ful"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="用心评价一下最好" id="jDL-Rf-pAT">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="FmH-dK-iGd" rowHeight="50" style="IBUITableViewCellStyleDefault" id="AqX-Nl-sx5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AqX-Nl-sx5" id="HfE-LQ-qKV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="期待你的建议或者评价" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FmH-dK-iGd">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="KHE-nR-fSV" rowHeight="50" style="IBUITableViewCellStyleDefault" id="HTy-8Y-gnb">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTy-8Y-gnb" id="0e4-IJ-oYh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="分享这个应用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KHE-nR-fSV">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="wfx-ul-vAc" id="gG9-Yy-Uqi"/>
                             <outlet property="delegate" destination="wfx-ul-vAc" id="sYk-ds-dQE"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="更多" id="deS-NA-UCH"/>
+                    <connections>
+                        <outlet property="adBannerView" destination="aUp-MT-PVt" id="orG-zE-erf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxu-xi-KR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -38,6 +38,8 @@
 		6B507B0E1B9D65690045BE28 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B0D1B9D65690045BE28 /* UIBaseTableViewController.m */; };
 		6B507B111B9D69D20045BE28 /* UIPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B101B9D69D20045BE28 /* UIPageTableViewController.m */; };
 		6B507B201B9D92000045BE28 /* UIContentToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B507B1F1B9D92000045BE28 /* UIContentToolBar.xib */; };
+		6B507B221B9DA5300045BE28 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B507B211B9DA5300045BE28 /* iAd.framework */; };
+		6B507B261B9DA5DC0045BE28 /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B251B9DA5DC0045BE28 /* MoreTableViewController.m */; };
 		6B5745D91B93FBCA009C1C54 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745D81B93FBCA009C1C54 /* NewsViewController.m */; };
 		6B5745DD1B9441E9009C1C54 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745DC1B9441E9009C1C54 /* NSDate+Util.m */; };
 		6B5745E21B945214009C1C54 /* UISwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745E01B945214009C1C54 /* UISwipeViewController.m */; };
@@ -144,6 +146,9 @@
 		6B507B0F1B9D69D20045BE28 /* UIPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPageTableViewController.h; sourceTree = "<group>"; };
 		6B507B101B9D69D20045BE28 /* UIPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPageTableViewController.m; sourceTree = "<group>"; };
 		6B507B1F1B9D92000045BE28 /* UIContentToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIContentToolBar.xib; sourceTree = "<group>"; };
+		6B507B211B9DA5300045BE28 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		6B507B241B9DA5DC0045BE28 /* MoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTableViewController.h; sourceTree = "<group>"; };
+		6B507B251B9DA5DC0045BE28 /* MoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewController.m; sourceTree = "<group>"; };
 		6B5745D71B93FBCA009C1C54 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		6B5745D81B93FBCA009C1C54 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		6B5745DB1B9441E9009C1C54 /* NSDate+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Util.h"; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B507B221B9DA5300045BE28 /* iAd.framework in Frameworks */,
 				98B7023A37D86C194313D685 /* libPods-CNBlogs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +263,7 @@
 				6B44B8DE1B8DC0E800ED4096 /* News */,
 				6B44B9001B8EBD7E00ED4096 /* Ranking */,
 				6B57461B1B946ACC009C1C54 /* Liked */,
+				6B507B231B9DA5B50045BE28 /* More */,
 			);
 			name = PresentationLayer;
 			sourceTree = "<group>";
@@ -433,6 +440,15 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		6B507B231B9DA5B50045BE28 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				6B507B241B9DA5DC0045BE28 /* MoreTableViewController.h */,
+				6B507B251B9DA5DC0045BE28 /* MoreTableViewController.m */,
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
 		6B57461B1B946ACC009C1C54 /* Liked */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +576,7 @@
 		748BFBA87E28ED6B6A582135 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B507B211B9DA5300045BE28 /* iAd.framework */,
 				C3A1F228B13C6ECDD394FD87 /* libPods-CNBlogs.a */,
 			);
 			name = Frameworks;
@@ -720,6 +737,7 @@
 				6B5746B41B96D7A5009C1C54 /* BlogContentEntity.m in Sources */,
 				6B5746A81B96C658009C1C54 /* NewsCommentTableViewController.m in Sources */,
 				6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */,
+				6B507B261B9DA5DC0045BE28 /* MoreTableViewController.m in Sources */,
 				6B5746901B95E1E9009C1C54 /* BloggerDAO.m in Sources */,
 				6B5746C21B96EDE1009C1C54 /* LikedBlogTableViewController.m in Sources */,
 				6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */,
