@@ -10,6 +10,8 @@
 #import "CoreDataDAO.h"
 #import <RestKit/RestKit.h>
 #import <UMengSocial/UMSocial.h>
+#import <UMengSocial/UMSocialWechatHandler.h>
+#import <UMengSocial/UMSocialQQHandler.h>
 
 @interface AppDelegate ()
 
@@ -31,18 +33,9 @@
 
     [UMSocialData setAppKey:UMengAppKey];
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
-
-//    Class cls = NSClassFromString(@"UMANUtil");
-//    SEL deviceIDSelector = @selector(openUDIDString);
-//    NSString *deviceID = nil;
-//    if(cls && [cls respondsToSelector:deviceIDSelector]){
-//        deviceID = [cls performSelector:deviceIDSelector];
-//    }
-//    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:@{@"oid" : deviceID}
-//                                                       options:NSJSONWritingPrettyPrinted
-//                                                         error:nil];
-//
-//    NSLog(@"%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
+    [UMSocialWechatHandler setWXAppId:@"wx0e873bf66a08c23f" appSecret:@"c4ec35558ac18cbe4e9fe912fac5b5e8" url:CNBlogsUrl];
+    [UMSocialQQHandler setQQWithAppId:@"1104849936" appKey:@"JjSha7xLFj6HTMR8" url:CNBlogsUrl];
 }
 
 - (void)setupLogger {
@@ -90,6 +83,14 @@ void UncaughtExceptionHandler(NSException *exception) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [[[CoreDataDAO alloc] init] saveContext];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return  [UMSocialSnsService handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return  [UMSocialSnsService handleOpenURL:url];
 }
 
 @end
