@@ -31,6 +31,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            [self openUrl:AppUrl];
+        } else if (indexPath.row == 1) {
+            [AppUtil shareText:[NSString stringWithFormat:@"博客yuan 你值得拥有 %@", AppUrl] inViewController:self];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+
+        } else if (indexPath.row == 1) {
+            [self openUrl:CNBlogsUrl];
+        }
+    }
+}
+
+- (void)openUrl:(NSString *)urlString {
+    UIApplication *application = [UIApplication sharedApplication];
+    NSURL *url = [NSURL URLWithString:urlString];
+    if ([application canOpenURL:url]) {
+        [application openURL:url];
+    }
 }
 
 /*

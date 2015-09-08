@@ -13,4 +13,7 @@
 
 #define UMengAppKey @"55e01dd667e58e47d2002e90"
 
+#define AppUrl @"https://itunes.apple.com/cn/app/id1037727413"
+#define CNBlogsUrl @"http://www.cnblogs.com/"
+
 #endif

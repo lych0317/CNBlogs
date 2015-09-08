@@ -431,12 +431,12 @@
         <scene sceneID="hs9-wB-zFz">
             <objects>
                 <tableViewController id="wfx-ul-vAc" customClass="MoreTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="25" sectionFooterHeight="30" id="UzI-PU-u7r">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UzI-PU-u7r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="随便支持一下就好" footerTitle="同时提供功能完全一样的付费版本" id="jYV-A5-xpA">
+                            <tableViewSection headerTitle="随便支持一下就好" footerTitle="同时提供功能完全一样的付费版(付带源码)" id="jYV-A5-xpA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="50" id="ciM-DI-gRj">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -471,9 +471,9 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="用心评价一下最好" id="jDL-Rf-pAT">
+                            <tableViewSection headerTitle="用心体验一下最好" id="jDL-Rf-pAT">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="FmH-dK-iGd" rowHeight="50" style="IBUITableViewCellStyleDefault" id="AqX-Nl-sx5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="FmH-dK-iGd" style="IBUITableViewCellStyleDefault" id="AqX-Nl-sx5">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AqX-Nl-sx5" id="HfE-LQ-qKV">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -487,12 +487,47 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="KHE-nR-fSV" rowHeight="50" style="IBUITableViewCellStyleDefault" id="HTy-8Y-gnb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="KHE-nR-fSV" style="IBUITableViewCellStyleDefault" id="HTy-8Y-gnb">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HTy-8Y-gnb" id="0e4-IJ-oYh">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="分享这个应用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KHE-nR-fSV">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="声明" id="D1F-v2-O7X">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="3zV-7A-CLn" style="IBUITableViewCellStyleDefault" id="kXt-JC-jpp">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXt-JC-jpp" id="6PJ-Ii-6ve">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="关于博客yuan和我" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3zV-7A-CLn">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Qz7-b0-IWf" kind="show" id="jSH-gV-1ub"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="UUQ-up-MO5" style="IBUITableViewCellStyleDefault" id="BZC-h1-MsS">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZC-h1-MsS" id="uHn-GE-yru">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="博客园(http://www.cnblogs.com/)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UUQ-up-MO5">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -517,6 +552,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hxu-xi-KR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="285" y="1168"/>
+        </scene>
+        <!--关于-->
+        <scene sceneID="Z8v-ro-OPl">
+            <objects>
+                <viewController title="关于" hidesBottomBarWhenPushed="YES" id="Qz7-b0-IWf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Px-XQ-iEZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="SYy-e5-sl5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6tU-21-mv2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag2-Nc-xBU">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">特别鸣谢
+感谢@博客园 开源的接口，才使我能够有机会完成这个应用。
+
+关于博客yuan
+1.0版本，完全依托于@博客园 公开的接口实现了以下功能
+a、博客列表、内容与评论的展示
+b、新闻列表、内容与评论的展示
+c、搜索博主与展示其博客列表
+d、博主推荐、48小时阅读、10天推荐与新闻推荐的排行榜
+e、收藏博客、博主、新闻（本地收藏）
+f、分享博客、博主、新闻、应用到主流平台
+
+这个应用会持续更新并且维护下去，目前正在开发下一版本。
+
+关于我
+qq：1173429319
+
+tel：18501340650
+
+email：lych0317@126.com</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ag2-Nc-xBU" firstAttribute="top" secondItem="6tU-21-mv2" secondAttribute="topMargin" id="0vk-Sv-uLW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ag2-Nc-xBU" secondAttribute="bottom" id="4JM-yG-OKX"/>
+                            <constraint firstItem="ag2-Nc-xBU" firstAttribute="leading" secondItem="6tU-21-mv2" secondAttribute="leadingMargin" id="RyV-bH-7Lf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ag2-Nc-xBU" secondAttribute="trailing" id="nkl-NT-tP9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于" id="7Da-YL-WMU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1wT-LL-cql" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="1168"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
