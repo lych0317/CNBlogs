@@ -33,7 +33,6 @@
 
     [UMSocialData setAppKey:UMengAppKey];
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
-    [UMSocialConfig setSupportedInterfaceOrientations:UIInterfaceOrientationMaskAll];
     [UMSocialWechatHandler setWXAppId:@"wx0e873bf66a08c23f" appSecret:@"c4ec35558ac18cbe4e9fe912fac5b5e8" url:CNBlogsUrl];
     [UMSocialQQHandler setQQWithAppId:@"1104849936" appKey:@"JjSha7xLFj6HTMR8" url:CNBlogsUrl];
 }

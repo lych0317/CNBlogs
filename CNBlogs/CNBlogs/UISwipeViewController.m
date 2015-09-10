@@ -50,6 +50,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"UICollectionViewCell" forIndexPath:indexPath];
+    for (UIView *view in cell.contentView.subviews) {
+        [view removeFromSuperview];
+    }
     UIViewController *viewController = self.viewControllerArray[indexPath.item];
     viewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(collectionView.frame), CGRectGetHeight(collectionView.frame));
     [cell.contentView addSubview:viewController.view];
