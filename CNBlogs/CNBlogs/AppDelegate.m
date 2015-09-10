@@ -10,6 +10,7 @@
 #import "CoreDataDAO.h"
 #import <RestKit/RestKit.h>
 #import <UMengSocial/UMSocial.h>
+#import <UMengSocial/UMSocialSinaHandler.h>
 #import <UMengSocial/UMSocialWechatHandler.h>
 #import <UMengSocial/UMSocialQQHandler.h>
 
@@ -32,7 +33,9 @@
     [MobClick setAppVersion:version];
 
     [UMSocialData setAppKey:UMengAppKey];
+    [UMSocialData openLog:YES];
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline]];
+    [UMSocialSinaHandler openSSOWithRedirectURL:@"http://sns.whalecloud.com/sina2/callback/"];
     [UMSocialWechatHandler setWXAppId:@"wx0e873bf66a08c23f" appSecret:@"c4ec35558ac18cbe4e9fe912fac5b5e8" url:CNBlogsUrl];
     [UMSocialQQHandler setQQWithAppId:@"1104849936" appKey:@"JjSha7xLFj6HTMR8" url:CNBlogsUrl];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "MoreTableViewController.h"
+#import "ShareUtil.h"
 #import <iAd/iAd.h>
 
 @interface MoreTableViewController ()
@@ -35,7 +36,7 @@
         if (indexPath.row == 0) {
             [self openUrl:AppUrl];
         } else if (indexPath.row == 1) {
-            [AppUtil shareText:[NSString stringWithFormat:@"博客yuan 你值得拥有 %@", AppUrl] inViewController:self];
+            [ShareUtil shareText:[NSString stringWithFormat:@"博客yuan 你值得拥有 %@", AppUrl] inViewController:self];
         }
     } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {

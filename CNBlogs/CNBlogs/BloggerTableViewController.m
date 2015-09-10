@@ -12,6 +12,7 @@
 #import "BlogTableViewCell.h"
 #import "BlogViewController.h"
 #import "BloggerDAO.h"
+#import "ShareUtil.h"
 
 @interface BloggerTableViewController ()
 
@@ -51,7 +52,7 @@
 }
 
 - (void)shareButtonAction:(UIBarButtonItem *)sender {
-    [AppUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.bloggerModel.title, self.bloggerModel.link] inViewController:self];
+    [ShareUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.bloggerModel.title, self.bloggerModel.link] inViewController:self];
 }
 
 - (void)requestData {

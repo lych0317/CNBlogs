@@ -72,6 +72,7 @@
 		6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */; };
 		6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0F1B8C7C6F007AC2EC /* Images.xcassets */; };
 		6BCE9B1F1B8C7C6F007AC2EC /* CNBlogsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B1E1B8C7C6F007AC2EC /* CNBlogsTests.m */; };
+		6BFB21811BA187F80099DD6A /* ShareUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB21801BA187F80099DD6A /* ShareUtil.m */; };
 		98B7023A37D86C194313D685 /* libPods-CNBlogs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A1F228B13C6ECDD394FD87 /* libPods-CNBlogs.a */; };
 /* End PBXBuildFile section */
 
@@ -210,6 +211,8 @@
 		6BCE9B181B8C7C6F007AC2EC /* CNBlogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNBlogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B1D1B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B1E1B8C7C6F007AC2EC /* CNBlogsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNBlogsTests.m; sourceTree = "<group>"; };
+		6BFB217F1BA187F80099DD6A /* ShareUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareUtil.h; sourceTree = "<group>"; };
+		6BFB21801BA187F80099DD6A /* ShareUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareUtil.m; sourceTree = "<group>"; };
 		89933BEB10E0A51440FCDE73 /* Pods-CNBlogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNBlogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNBlogs/Pods-CNBlogs.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A1F228B13C6ECDD394FD87 /* libPods-CNBlogs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CNBlogs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -332,6 +335,8 @@
 				6B44B8CF1B8D9F1A00ED4096 /* Constant.h */,
 				6B44B8DB1B8DBC7A00ED4096 /* AppUtil.h */,
 				6B44B8DC1B8DBC7A00ED4096 /* AppUtil.m */,
+				6BFB217F1BA187F80099DD6A /* ShareUtil.h */,
+				6BFB21801BA187F80099DD6A /* ShareUtil.m */,
 				6B5745DB1B9441E9009C1C54 /* NSDate+Util.h */,
 				6B5745DC1B9441E9009C1C54 /* NSDate+Util.m */,
 				6B57461F1B954D28009C1C54 /* NSString+Html.h */,
@@ -777,6 +782,7 @@
 				6B44B8CE1B8D9D1E00ED4096 /* BlogTableViewController.m in Sources */,
 				6B5745D91B93FBCA009C1C54 /* NewsViewController.m in Sources */,
 				6B5746AE1B96D7A5009C1C54 /* AuthorEntity.m in Sources */,
+				6BFB21811BA187F80099DD6A /* ShareUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

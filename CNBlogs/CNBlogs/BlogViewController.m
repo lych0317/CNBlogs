@@ -13,6 +13,7 @@
 #import "BlogContentModel.h"
 #import "BlogDAO.h"
 #import "BlogModel.h"
+#import "ShareUtil.h"
 #import <MJRefresh/MJRefresh.h>
 
 @interface BlogViewController ()
@@ -51,7 +52,7 @@
 }
 
 - (void)shareButtonAction:(UIButton *)sender {
-    [AppUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.blogModel.title, self.blogModel.link] inViewController:self];
+    [ShareUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.blogModel.title, self.blogModel.link] inViewController:self];
 }
 
 - (void)commentButtonAction:(UIButton *)sender {
