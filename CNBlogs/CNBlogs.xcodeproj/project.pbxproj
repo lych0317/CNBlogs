@@ -38,7 +38,6 @@
 		6B507B0E1B9D65690045BE28 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B0D1B9D65690045BE28 /* UIBaseTableViewController.m */; };
 		6B507B111B9D69D20045BE28 /* UIPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B101B9D69D20045BE28 /* UIPageTableViewController.m */; };
 		6B507B201B9D92000045BE28 /* UIContentToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B507B1F1B9D92000045BE28 /* UIContentToolBar.xib */; };
-		6B507B221B9DA5300045BE28 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B507B211B9DA5300045BE28 /* iAd.framework */; };
 		6B507B261B9DA5DC0045BE28 /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B507B251B9DA5DC0045BE28 /* MoreTableViewController.m */; };
 		6B5745D91B93FBCA009C1C54 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745D81B93FBCA009C1C54 /* NewsViewController.m */; };
 		6B5745DD1B9441E9009C1C54 /* NSDate+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5745DC1B9441E9009C1C54 /* NSDate+Util.m */; };
@@ -69,10 +68,10 @@
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
-		6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */; };
 		6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0F1B8C7C6F007AC2EC /* Images.xcassets */; };
 		6BCE9B1F1B8C7C6F007AC2EC /* CNBlogsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B1E1B8C7C6F007AC2EC /* CNBlogsTests.m */; };
 		6BFB21811BA187F80099DD6A /* ShareUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BFB21801BA187F80099DD6A /* ShareUtil.m */; };
+		6BFB21841BA7B0F30099DD6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCE9B0C1B8C7C6F007AC2EC /* Main.storyboard */; };
 		98B7023A37D86C194313D685 /* libPods-CNBlogs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A1F228B13C6ECDD394FD87 /* libPods-CNBlogs.a */; };
 /* End PBXBuildFile section */
 
@@ -147,7 +146,6 @@
 		6B507B0F1B9D69D20045BE28 /* UIPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPageTableViewController.h; sourceTree = "<group>"; };
 		6B507B101B9D69D20045BE28 /* UIPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPageTableViewController.m; sourceTree = "<group>"; };
 		6B507B1F1B9D92000045BE28 /* UIContentToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIContentToolBar.xib; sourceTree = "<group>"; };
-		6B507B211B9DA5300045BE28 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6B507B241B9DA5DC0045BE28 /* MoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreTableViewController.h; sourceTree = "<group>"; };
 		6B507B251B9DA5DC0045BE28 /* MoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreTableViewController.m; sourceTree = "<group>"; };
 		6B5745D71B93FBCA009C1C54 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B507B221B9DA5300045BE28 /* iAd.framework in Frameworks */,
 				98B7023A37D86C194313D685 /* libPods-CNBlogs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,7 +578,6 @@
 		748BFBA87E28ED6B6A582135 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B507B211B9DA5300045BE28 /* iAd.framework */,
 				C3A1F228B13C6ECDD394FD87 /* libPods-CNBlogs.a */,
 			);
 			name = Frameworks;
@@ -669,9 +665,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFB21841BA7B0F30099DD6A /* Main.storyboard in Resources */,
 				6B44B9161B8ED5A500ED4096 /* BloggerTableViewCell.xib in Resources */,
 				6B2659DC1B8F039E00ABA509 /* BlogTableViewCell.xib in Resources */,
-				6BCE9B0E1B8C7C6F007AC2EC /* Main.storyboard in Resources */,
 				6BCE9B101B8C7C6F007AC2EC /* Images.xcassets in Resources */,
 				6B5746771B9574A9009C1C54 /* html in Resources */,
 				6B631A111B9BDF6C00F770A1 /* CommentTableViewCell.xib in Resources */,

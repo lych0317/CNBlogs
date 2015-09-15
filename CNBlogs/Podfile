@@ -13,7 +13,7 @@ pod 'MBProgressHUD'
 pod 'CocoaLumberjack'
 pod 'MJRefresh'
 pod 'GRMustache'
-pod 'UMengAnalytics'
+pod 'UMengAnalytics-NO-IDFA'
 pod 'UMengSocial'
 
 end

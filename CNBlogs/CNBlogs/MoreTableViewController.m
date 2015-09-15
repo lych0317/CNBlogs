@@ -8,11 +8,8 @@
 
 #import "MoreTableViewController.h"
 #import "ShareUtil.h"
-#import <iAd/iAd.h>
 
 @interface MoreTableViewController ()
-
-@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 
 @end
 
@@ -22,26 +19,18 @@
     [super viewDidLoad];
 }
 
-#pragma mark - ADBannerViewDelegate
-
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    self.adBannerView.hidden = NO;
-}
-
 #pragma mark - table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 1) {
+    if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             [self openUrl:AppUrl];
         } else if (indexPath.row == 1) {
             [ShareUtil shareText:[NSString stringWithFormat:@"博客yuan 你值得拥有 %@", AppUrl] inViewController:self];
         }
-    } else if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-
-        } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 1) {
             [self openUrl:CNBlogsUrl];
         }
     }

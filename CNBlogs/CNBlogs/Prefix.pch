@@ -14,7 +14,7 @@
 #import "NSDate+Util.h"
 #import "NSString+Html.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import <UMengAnalytics/MobClick.h>
+#import <UMengAnalytics-NO-IDFA/MobClick.h>
 
 #endif
 
