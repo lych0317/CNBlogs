@@ -23,6 +23,8 @@
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf requestDataForFooter];
     }];
+    self.tableView.footer.hidden = YES;
+    self.tableView.footer.automaticallyHidden = NO;
 
     self.successBlock = ^(id data, id identifier) {
         if (weakSelf.pageIndex == 1) {
