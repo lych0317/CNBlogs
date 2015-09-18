@@ -26,8 +26,12 @@
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestBlogData {
-    [ProtocolUtil getViewIn48HListWithCount:@(20) success:self.failureBlock failure:self.failureBlock];
+- (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure {
+    [ProtocolUtil getViewIn48HListWithCount:@(20) success:^(id data, id identifier) {
+        success(data);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 #pragma mark - Table view data source

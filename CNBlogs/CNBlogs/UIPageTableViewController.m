@@ -25,38 +25,46 @@
     }];
     self.tableView.footer.hidden = YES;
     self.tableView.footer.automaticallyHidden = NO;
+}
 
-    self.successBlock = ^(id data, id identifier) {
-        if (weakSelf.pageIndex == 1) {
-            weakSelf.dataArray = [NSMutableArray array];
-            [weakSelf.tableView reloadData];
-        }
-        weakSelf.pageIndex++;
-        [weakSelf.tableView.header endRefreshing];
-        [weakSelf.tableView.footer endRefreshing];
-        NSArray *array = data;
-        [weakSelf.dataArray addObjectsFromArray:array];
-        weakSelf.tableView.footer.hidden = array.count < PageCount;
-        [weakSelf.tableView reloadData];
-    };
-    self.failureBlock = ^(RKObjectRequestOperation *operation, NSError *error) {
-        [weakSelf.tableView.header endRefreshing];
-        [weakSelf.tableView.footer endRefreshing];
-        [AppUtil showToastWithTitle:error.userInfo[NSLocalizedDescriptionKey]];
-        MyLogInfo(@"%@\n%@", NSStringFromClass([weakSelf class]), error.description);
-    };
+- (void)successRequestData:(NSArray *)array {
+    if (self.pageIndex == 1) {
+        self.dataArray = [NSMutableArray array];
+        [self.tableView reloadData];
+    }
+    self.pageIndex++;
+    [self.tableView.header endRefreshing];
+    [self.tableView.footer endRefreshing];
+    [self.dataArray addObjectsFromArray:array];
+    self.tableView.footer.hidden = array.count < PageCount;
+    [self.tableView reloadData];
+}
+
+- (void)failureRequestData:(NSError *)error {
+    [self.tableView.header endRefreshing];
+    [self.tableView.footer endRefreshing];
+    [AppUtil showToastWithTitle:error.userInfo[NSLocalizedDescriptionKey]];
+    MyLogInfo(@"%@\n%@", NSStringFromClass([self class]), error.description);
 }
 
 - (void)requestDataForHeader {
     self.pageIndex = 1;
-    [self requestData];
+    [self requestDataWithSuccess:^(NSArray *array) {
+        [self successRequestData:array];
+    } failure:^(NSError *error) {
+        [self failureRequestData:error];
+    }];
 }
 
 - (void)requestDataForFooter {
-    [self requestData];
+    [self requestDataWithSuccess:^(NSArray *array) {
+        [self successRequestData:array];
+    } failure:^(NSError *error) {
+        [self failureRequestData:error];
+    }];
 }
 
-- (void)requestData {
+- (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure {
 }
 
 #pragma mark - Table view data source

@@ -10,13 +10,14 @@
 #import "ProtocolUtil.h"
 #import <MJRefresh/MJRefresh.h>
 
+typedef void(^PageTableRequestDataSuccessBlock)(NSArray *array);
+typedef void(^PageTableRequestDataFailureBlock)(NSError *error);
+
 @interface UIPageTableViewController : UIBaseTableViewController
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger pageIndex;
-@property (nonatomic, copy) ProtocolSuccessBlock successBlock;
-@property (nonatomic, copy) ProtocolFailureBlock failureBlock;
 
-- (void)requestData;
+- (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure;
 
 @end

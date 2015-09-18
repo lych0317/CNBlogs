@@ -55,8 +55,12 @@
     [ShareUtil shareText:[NSString stringWithFormat:@"%@\n%@", self.bloggerModel.title, self.bloggerModel.link] inViewController:self];
 }
 
-- (void)requestData {
-    [ProtocolUtil getBlogListWithBlogapp:self.bloggerModel.blogapp pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:self.successBlock failure:self.failureBlock];
+- (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure {
+    [ProtocolUtil getBlogListWithBlogapp:self.bloggerModel.blogapp pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
+        success(data);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 #pragma mark - Table view data source

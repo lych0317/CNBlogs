@@ -29,8 +29,12 @@
     [self.tableView.header beginRefreshing];
 }
 
-- (void)requestData {
-    [ProtocolUtil getBlogCommentListWithID:self.blogModel.identifier pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:self.successBlock failure:self.failureBlock];
+- (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure {
+    [ProtocolUtil getBlogCommentListWithID:self.blogModel.identifier pageIndex:@(self.pageIndex) pageCount:@(PageCount) success:^(id data, id identifier) {
+        success(data);
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 #pragma mark - Table view data source
