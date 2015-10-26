@@ -16,4 +16,6 @@
 #define AppUrl @"https://itunes.apple.com/cn/app/id1037727413"
 #define CNBlogsUrl @"http://www.cnblogs.com/"
 
+#define App_Version [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
 #endif
