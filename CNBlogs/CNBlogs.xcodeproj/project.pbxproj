@@ -12,7 +12,6 @@
 		6B2659E01B8F1DF800ABA509 /* RecommendIn10DTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2659DF1B8F1DF800ABA509 /* RecommendIn10DTableViewController.m */; };
 		6B2659E31B8FF50500ABA509 /* NewsRecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2659E21B8FF50500ABA509 /* NewsRecommendTableViewController.m */; };
 		6B2659E91B9015F200ABA509 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2659E81B9015F200ABA509 /* NewsTableViewCell.xib */; };
-		6B2659EE1B90724600ABA509 /* SearchBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2659ED1B90724600ABA509 /* SearchBlogViewController.m */; };
 		6B2659F11B9078AE00ABA509 /* BloggerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B2659F01B9078AE00ABA509 /* BloggerTableViewController.m */; };
 		6B44B8AE1B8D504F00ED4096 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8AD1B8D504F00ED4096 /* README.md */; };
 		6B44B8B61B8D54B300ED4096 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B44B8B51B8D54B300ED4096 /* AuthorModel.m */; };
@@ -69,6 +68,13 @@
 		6B631A101B9BDF6C00F770A1 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B631A0E1B9BDF6C00F770A1 /* CommentTableViewCell.m */; };
 		6B631A111B9BDF6C00F770A1 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B631A0F1B9BDF6C00F770A1 /* CommentTableViewCell.xib */; };
 		6BC27FFB1BDE446300E28778 /* SearchNewsProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC27FFA1BDE446300E28778 /* SearchNewsProtocol.m */; };
+		6BC2802E1BDF54B900E28778 /* RecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2802B1BDF54B900E28778 /* RecordTableViewController.m */; };
+		6BC2802F1BDF54B900E28778 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2802D1BDF54B900E28778 /* RecordViewController.m */; };
+		6BC280331BDF580D00E28778 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC280321BDF580D00E28778 /* SearchViewController.m */; };
+		6BC280391BDF59C000E28778 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC280381BDF59C000E28778 /* SearchTableViewController.m */; };
+		6BC2803C1BDF59DD00E28778 /* SearchBloggerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2803B1BDF59DD00E28778 /* SearchBloggerTableViewController.m */; };
+		6BC2803F1BDF59F000E28778 /* SearchBlogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC2803E1BDF59F000E28778 /* SearchBlogTableViewController.m */; };
+		6BC280421BDF5A0100E28778 /* SearchNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC280411BDF5A0100E28778 /* SearchNewsTableViewController.m */; };
 		6BCE9B021B8C7C6F007AC2EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B011B8C7C6F007AC2EC /* main.m */; };
 		6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B041B8C7C6F007AC2EC /* AppDelegate.m */; };
 		6BCE9B081B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE9B061B8C7C6F007AC2EC /* CNBlogs.xcdatamodeld */; };
@@ -99,8 +105,6 @@
 		6B2659E11B8FF50500ABA509 /* NewsRecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRecommendTableViewController.h; sourceTree = "<group>"; };
 		6B2659E21B8FF50500ABA509 /* NewsRecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRecommendTableViewController.m; sourceTree = "<group>"; };
 		6B2659E81B9015F200ABA509 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
-		6B2659EC1B90724600ABA509 /* SearchBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBlogViewController.h; sourceTree = "<group>"; };
-		6B2659ED1B90724600ABA509 /* SearchBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBlogViewController.m; sourceTree = "<group>"; };
 		6B2659EF1B9078AE00ABA509 /* BloggerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BloggerTableViewController.h; sourceTree = "<group>"; };
 		6B2659F01B9078AE00ABA509 /* BloggerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BloggerTableViewController.m; sourceTree = "<group>"; };
 		6B44B8AD1B8D504F00ED4096 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -210,6 +214,20 @@
 		6B631A0F1B9BDF6C00F770A1 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		6BC27FF91BDE446300E28778 /* SearchNewsProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchNewsProtocol.h; path = Server/SearchNewsProtocol.h; sourceTree = "<group>"; };
 		6BC27FFA1BDE446300E28778 /* SearchNewsProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchNewsProtocol.m; path = Server/SearchNewsProtocol.m; sourceTree = "<group>"; };
+		6BC2802A1BDF54B900E28778 /* RecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTableViewController.h; sourceTree = "<group>"; };
+		6BC2802B1BDF54B900E28778 /* RecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewController.m; sourceTree = "<group>"; };
+		6BC2802C1BDF54B900E28778 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		6BC2802D1BDF54B900E28778 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		6BC280311BDF580D00E28778 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		6BC280321BDF580D00E28778 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		6BC280371BDF59C000E28778 /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
+		6BC280381BDF59C000E28778 /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
+		6BC2803A1BDF59DD00E28778 /* SearchBloggerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBloggerTableViewController.h; sourceTree = "<group>"; };
+		6BC2803B1BDF59DD00E28778 /* SearchBloggerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBloggerTableViewController.m; sourceTree = "<group>"; };
+		6BC2803D1BDF59F000E28778 /* SearchBlogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBlogTableViewController.h; sourceTree = "<group>"; };
+		6BC2803E1BDF59F000E28778 /* SearchBlogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBlogTableViewController.m; sourceTree = "<group>"; };
+		6BC280401BDF5A0100E28778 /* SearchNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchNewsTableViewController.h; sourceTree = "<group>"; };
+		6BC280411BDF5A0100E28778 /* SearchNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchNewsTableViewController.m; sourceTree = "<group>"; };
 		6BCE9AFC1B8C7C6F007AC2EC /* CNBlogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNBlogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCE9B001B8C7C6F007AC2EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BCE9B011B8C7C6F007AC2EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -273,8 +291,10 @@
 				6B44B8CB1B8D9CD400ED4096 /* App */,
 				6B44B8CA1B8D9CB800ED4096 /* Blog */,
 				6B44B8DE1B8DC0E800ED4096 /* News */,
+				6BC280301BDF554000E28778 /* Search */,
 				6B44B9001B8EBD7E00ED4096 /* Ranking */,
 				6B57461B1B946ACC009C1C54 /* Liked */,
+				6BC280291BDF549700E28778 /* Record */,
 				6B507B231B9DA5B50045BE28 /* More */,
 			);
 			name = PresentationLayer;
@@ -330,8 +350,6 @@
 			children = (
 				6B44B8CC1B8D9D1E00ED4096 /* BlogTableViewController.h */,
 				6B44B8CD1B8D9D1E00ED4096 /* BlogTableViewController.m */,
-				6B2659EC1B90724600ABA509 /* SearchBlogViewController.h */,
-				6B2659ED1B90724600ABA509 /* SearchBlogViewController.m */,
 			);
 			name = Blog;
 			sourceTree = "<group>";
@@ -528,6 +546,34 @@
 				6B5746961B95E992009C1C54 /* BloggerEntity.m */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		6BC280291BDF549700E28778 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				6BC2802A1BDF54B900E28778 /* RecordTableViewController.h */,
+				6BC2802B1BDF54B900E28778 /* RecordTableViewController.m */,
+				6BC2802C1BDF54B900E28778 /* RecordViewController.h */,
+				6BC2802D1BDF54B900E28778 /* RecordViewController.m */,
+			);
+			name = Record;
+			sourceTree = "<group>";
+		};
+		6BC280301BDF554000E28778 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6BC280311BDF580D00E28778 /* SearchViewController.h */,
+				6BC280321BDF580D00E28778 /* SearchViewController.m */,
+				6BC280371BDF59C000E28778 /* SearchTableViewController.h */,
+				6BC280381BDF59C000E28778 /* SearchTableViewController.m */,
+				6BC2803A1BDF59DD00E28778 /* SearchBloggerTableViewController.h */,
+				6BC2803B1BDF59DD00E28778 /* SearchBloggerTableViewController.m */,
+				6BC2803D1BDF59F000E28778 /* SearchBlogTableViewController.h */,
+				6BC2803E1BDF59F000E28778 /* SearchBlogTableViewController.m */,
+				6BC280401BDF5A0100E28778 /* SearchNewsTableViewController.h */,
+				6BC280411BDF5A0100E28778 /* SearchNewsTableViewController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		6BCE9AF31B8C7C6F007AC2EC = {
@@ -751,17 +797,22 @@
 				6B5746A01B969F81009C1C54 /* UIContentToolBar.m in Sources */,
 				6B5746C51B96FE2A009C1C54 /* LikedNewsTableViewController.m in Sources */,
 				6B5746211B954D28009C1C54 /* NSString+Html.m in Sources */,
+				6BC2802E1BDF54B900E28778 /* RecordTableViewController.m in Sources */,
 				6B44B8D31B8DA7E900ED4096 /* BlogTableViewCell.m in Sources */,
 				6B5745E21B945214009C1C54 /* UISwipeViewController.m in Sources */,
+				6BC2802F1BDF54B900E28778 /* RecordViewController.m in Sources */,
 				6B44B90B1B8ED33A00ED4096 /* BloggerRecommendTableViewController.m in Sources */,
-				6B2659EE1B90724600ABA509 /* SearchBlogViewController.m in Sources */,
+				6BC280331BDF580D00E28778 /* SearchViewController.m in Sources */,
 				6B5746B41B96D7A5009C1C54 /* BlogContentEntity.m in Sources */,
 				6B5F95481BDE393C0060FD7A /* BaseResult.m in Sources */,
+				6BC280421BDF5A0100E28778 /* SearchNewsTableViewController.m in Sources */,
 				6B5746A81B96C658009C1C54 /* NewsCommentTableViewController.m in Sources */,
 				6B44B8DD1B8DBC7A00ED4096 /* AppUtil.m in Sources */,
 				6B507B261B9DA5DC0045BE28 /* MoreTableViewController.m in Sources */,
+				6BC2803C1BDF59DD00E28778 /* SearchBloggerTableViewController.m in Sources */,
 				6B5746901B95E1E9009C1C54 /* BloggerDAO.m in Sources */,
 				6B5746C21B96EDE1009C1C54 /* LikedBlogTableViewController.m in Sources */,
+				6BC2803F1BDF59F000E28778 /* SearchBlogTableViewController.m in Sources */,
 				6B44B8C91B8D5FDF00ED4096 /* ProtocolUtil.m in Sources */,
 				6B5F95421BDE37380060FD7A /* BaseProtocol.m in Sources */,
 				6BCE9B051B8C7C6F007AC2EC /* AppDelegate.m in Sources */,
@@ -791,6 +842,7 @@
 				6B44B8BC1B8D560D00ED4096 /* CommentModel.m in Sources */,
 				6B57469D1B969E48009C1C54 /* UIContentViewController.m in Sources */,
 				6B5746BD1B96E097009C1C54 /* NewsDAO.m in Sources */,
+				6BC280391BDF59C000E28778 /* SearchTableViewController.m in Sources */,
 				6BC27FFB1BDE446300E28778 /* SearchNewsProtocol.m in Sources */,
 				6B57461E1B946AF4009C1C54 /* LikedViewController.m in Sources */,
 				6B44B8E71B8EAF3800ED4096 /* AppTabBarViewController.m in Sources */,

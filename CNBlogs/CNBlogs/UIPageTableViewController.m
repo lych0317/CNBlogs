@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.firstPage = 1;
     __weak UIPageTableViewController *weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf requestDataForHeader];
@@ -28,7 +29,7 @@
 }
 
 - (void)successRequestData:(NSArray *)array {
-    if (self.pageIndex == 1) {
+    if (self.pageIndex == self.firstPage) {
         self.dataArray = [NSMutableArray array];
         [self.tableView reloadData];
     }
@@ -48,7 +49,7 @@
 }
 
 - (void)requestDataForHeader {
-    self.pageIndex = 1;
+    self.pageIndex = self.firstPage;
     [self requestDataWithSuccess:^(NSArray *array) {
         [self successRequestData:array];
     } failure:^(NSError *error) {

@@ -17,6 +17,7 @@ typedef void(^PageTableRequestDataFailureBlock)(NSError *error);
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, assign) NSInteger pageIndex;
+@property (nonatomic, assign) NSInteger firstPage;
 
 - (void)requestDataWithSuccess:(PageTableRequestDataSuccessBlock)success failure:(PageTableRequestDataFailureBlock)failure;
 

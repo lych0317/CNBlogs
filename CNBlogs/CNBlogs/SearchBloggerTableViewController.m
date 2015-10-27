@@ -1,12 +1,12 @@
 //
-//  SearchBlogViewController.m
+//  SearchBloggerTableViewController.m
 //  CNBlogs
 //
-//  Created by 李远超 on 15/8/28.
+//  Created by 李远超 on 15/10/27.
 //  Copyright (c) 2015年 liyc. All rights reserved.
 //
 
-#import "SearchBlogViewController.h"
+#import "SearchBloggerTableViewController.h"
 #import "ProtocolUtil.h"
 #import "BloggerModel.h"
 #import "BloggerTableViewCell.h"
@@ -14,16 +14,14 @@
 #import <MJRefresh/MJRefresh.h>
 #import <UIImageView+WebCache.h>
 
-@interface SearchBlogViewController ()
+@interface SearchBloggerTableViewController ()
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, copy) NSString *keyword;
 @property (nonatomic, strong) NSArray *bloggerModelArray;
 
 @end
 
-@implementation SearchBlogViewController
+@implementation SearchBloggerTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,27 +31,25 @@
 
     [self.tableView registerNib:[UINib nibWithNibName:@"BloggerTableViewCell" bundle:nil] forCellReuseIdentifier:@"BloggerTableViewCell"];
 
-    __weak SearchBlogViewController *weakSelf = self;
+    __weak SearchBloggerTableViewController *weakSelf = self;
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [weakSelf requestBloggerData];
     }];
 }
 
+- (void)startSearchWithKeyword:(NSString *)keyword {
+    self.keyword = keyword;
+    [self.tableView.header beginRefreshing];
+}
+
 - (void)requestBloggerData {
-    [ProtocolUtil getBloggerListWithSearchText:self.searchBar.text success:^(id data, id identifier) {
+    [ProtocolUtil getBloggerListWithSearchText:self.keyword success:^(id data, id identifier) {
         [self.tableView.header endRefreshing];
         self.bloggerModelArray = data;
         [self.tableView reloadData];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         [self.tableView.header endRefreshing];
     }];
-}
-
-#pragma mark - UISearchBarDelegate
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
-    [self.tableView.header beginRefreshing];
 }
 
 #pragma mark - UITableViewDataSource
@@ -76,19 +72,15 @@
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     BloggerModel *bloggerModel = self.bloggerModelArray[indexPath.row];
-    [self performSegueWithIdentifier:@"SearchToBloggerSegue" sender:bloggerModel];
-}
-
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"SearchToBloggerSegue"]) {
-        BloggerTableViewController *viewController = segue.destinationViewController;
-        viewController.bloggerModel = sender;
+    if (self.didSelectBloggerBlock) {
+        self.didSelectBloggerBlock(bloggerModel);
     }
 }
 

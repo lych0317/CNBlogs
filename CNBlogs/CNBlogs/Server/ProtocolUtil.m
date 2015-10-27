@@ -26,7 +26,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return indexSet;
 }
 
-+ (void)getBlogListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBlogListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self blogModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -60,7 +60,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return authorMapping;
 }
 
-+ (void)getBlogContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBlogContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/xml"];
     RKObjectMapping *responseMapping = [RKObjectMapping mappingForClass:[BlogContentModel class]];
     [responseMapping addAttributeMappingsFromDictionary:@{@"string.text": @"content"}];
@@ -82,7 +82,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getBloggerListWithSearchText:(NSString *)text success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBloggerListWithSearchText:(NSString *)text success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self bloggerModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -103,7 +103,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getBlogListWithBlogapp:(NSString *)blogapp pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBlogListWithBlogapp:(NSString *)blogapp pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self blogModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -124,7 +124,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getBlogCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBlogCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self commentModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -152,7 +152,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return commentMapping;
 }
 
-+ (void)getNewsListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getNewsListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self newsModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -179,7 +179,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return newsMapping;
 }
 
-+ (void)getNewsContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getNewsContentWithID:(NSNumber *)identifier success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/xml"];
     RKObjectMapping *responseMapping = [self newsContentModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"NewsBody" statusCodes:[self createStatusCodes]];
@@ -200,7 +200,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getNewsCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getNewsCommentListWithID:(NSNumber *)identifier pageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self commentModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -227,7 +227,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return mapping;
 }
 
-+ (void)getBloggerRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getBloggerRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self bloggerModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -254,7 +254,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     return bloggerMapping;
 }
 
-+ (void)getViewIn48HListWithCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getViewIn48HListWithCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self blogModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -275,7 +275,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getRecommendIn10DListWithCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getRecommendIn10DListWithCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self blogModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];
@@ -296,7 +296,7 @@ static NSString *protocolBaseUrl = @"http://wcf.open.cnblogs.com/";
     [operation start];
 }
 
-+ (void)getNewsRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock)failure {
++ (void)getNewsRecommendListWithPageIndex:(NSNumber *)index pageCount:(NSNumber *)count success:(ProtocolSuccessBlock)success failure:(ProtocolFailureBlock1)failure {
     [RKMIMETypeSerialization registerClass:[RKXMLReaderSerialization class] forMIMEType:@"application/atom+xml"];
     RKObjectMapping *responseMapping = [self newsModelMapping];
     RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:responseMapping method:RKRequestMethodGET pathPattern:nil keyPath:@"feed.entry" statusCodes:[self createStatusCodes]];

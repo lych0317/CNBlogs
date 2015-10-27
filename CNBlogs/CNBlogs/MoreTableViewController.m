@@ -23,13 +23,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             [self openUrl:AppUrl];
         } else if (indexPath.row == 1) {
             [ShareUtil shareText:[NSString stringWithFormat:@"博客yuan 你值得拥有 %@", AppUrl] inViewController:self];
         }
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
         if (indexPath.row == 1) {
             [self openUrl:CNBlogsUrl];
         }

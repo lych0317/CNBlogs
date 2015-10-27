@@ -54,6 +54,7 @@
     LikedTableViewController *viewController = self.viewControllerArray[self.segmentedControl.selectedSegmentIndex];
     viewController.tableView.editing = !viewController.tableView.editing;
 }
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
