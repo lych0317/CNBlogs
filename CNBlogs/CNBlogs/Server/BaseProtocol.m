@@ -8,7 +8,7 @@
 
 #import "BaseProtocol.h"
 
-#define BaseURL @"http://127.0.0.1:5000/"
+#define BaseURL @"http://123.57.79.48:5000/"
 
 @implementation BaseProtocol
 
