@@ -566,10 +566,10 @@
 				6BC280321BDF580D00E28778 /* SearchViewController.m */,
 				6BC280371BDF59C000E28778 /* SearchTableViewController.h */,
 				6BC280381BDF59C000E28778 /* SearchTableViewController.m */,
-				6BC2803A1BDF59DD00E28778 /* SearchBloggerTableViewController.h */,
-				6BC2803B1BDF59DD00E28778 /* SearchBloggerTableViewController.m */,
 				6BC2803D1BDF59F000E28778 /* SearchBlogTableViewController.h */,
 				6BC2803E1BDF59F000E28778 /* SearchBlogTableViewController.m */,
+				6BC2803A1BDF59DD00E28778 /* SearchBloggerTableViewController.h */,
+				6BC2803B1BDF59DD00E28778 /* SearchBloggerTableViewController.m */,
 				6BC280401BDF5A0100E28778 /* SearchNewsTableViewController.h */,
 				6BC280411BDF5A0100E28778 /* SearchNewsTableViewController.m */,
 			);

@@ -24,14 +24,14 @@
 @implementation SearchViewController
 
 - (void)viewDidLoad {
-    SearchBloggerTableViewController *blogger = [[SearchBloggerTableViewController alloc] init];
-    blogger.didSelectBloggerBlock = ^(BloggerModel *model) {
-        [self performSegueWithIdentifier:@"SearchToBloggerSegue" sender:model];
-    };
-
     SearchBlogTableViewController *blog = [[SearchBlogTableViewController alloc] init];
     blog.didSelectBlogBlock = ^(BlogModel *model) {
         [self performSegueWithIdentifier:@"SearchToBlogSegue" sender:model];
+    };
+
+    SearchBloggerTableViewController *blogger = [[SearchBloggerTableViewController alloc] init];
+    blogger.didSelectBloggerBlock = ^(BloggerModel *model) {
+        [self performSegueWithIdentifier:@"SearchToBloggerSegue" sender:model];
     };
 
     SearchNewsTableViewController *news = [[SearchNewsTableViewController alloc] init];
@@ -39,8 +39,8 @@
         [self performSegueWithIdentifier:@"SearchToNewsSegue" sender:model];
     };
 
-    self.viewControllerArray = @[blogger, blog, news];
-    self.titleArray = @[NSLocalizedString(@"博主", @""), NSLocalizedString(@"博客", @""), NSLocalizedString(@"新闻", @"")];
+    self.viewControllerArray = @[blog,blogger, news];
+    self.titleArray = @[NSLocalizedString(@"博客", @""), NSLocalizedString(@"博主", @""), NSLocalizedString(@"新闻", @"")];
     [super viewDidLoad];
 
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
