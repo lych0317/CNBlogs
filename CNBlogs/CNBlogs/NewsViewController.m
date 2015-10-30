@@ -60,7 +60,19 @@
 }
 
 - (void)loadWebView {
-    NSDictionary *dictionary = @{@"title": self.newsModel.title, @"sourceName": self.newsModel.sourceName, @"submitTime": [self.newsModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.newsModel.contentModel.content};
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    if (self.newsModel.title) {
+        [dictionary setObject:self.newsModel.title forKey:@"title"];
+    }
+    if (self.newsModel.sourceName) {
+        [dictionary setObject:self.newsModel.sourceName forKey:@"sourceName"];
+    }
+    if (self.newsModel.publishDate) {
+        [dictionary setObject:[self.newsModel.publishDate stringWithFormate:yyMMddHHmm] forKey:@"submitTime"];
+    }
+    if (self.newsModel.contentModel.content) {
+        [dictionary setObject:self.newsModel.contentModel.content forKey:@"content"];
+    }
 
     NSString *html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"news"];
     [self.contentWebView loadHTMLString:html baseURL:nil];

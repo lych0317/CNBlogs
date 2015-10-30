@@ -60,7 +60,19 @@
 }
 
 - (void)loadWebView {
-    NSDictionary *dictionary = @{@"title": self.blogModel.title, @"authorName": self.blogModel.authorModel.name, @"publishedTime": [self.blogModel.publishDate stringWithFormate:yyMMddHHmm], @"content": self.blogModel.contentModel.content};
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    if (self.blogModel.title) {
+        [dictionary setObject:self.blogModel.title forKey:@""];
+    }
+    if (self.blogModel.authorModel.name) {
+        [dictionary setObject:self.blogModel.authorModel.name forKey:@"authorName"];
+    }
+    if (self.blogModel.publishDate) {
+        [dictionary setObject:[self.blogModel.publishDate stringWithFormate:yyMMddHHmm] forKey:@"publishedTime"];
+    }
+    if (self.blogModel.contentModel.content) {
+        [dictionary setObject:self.blogModel.contentModel.content forKey:@"content"];
+    }
 
     NSString *html = [AppUtil htmlWithDictionary:dictionary usingTemplate:@"blog"];
     [self.contentWebView loadHTMLString:html baseURL:nil];

@@ -35,6 +35,9 @@
     };
 
     SearchNewsTableViewController *news = [[SearchNewsTableViewController alloc] init];
+    news.didSelectNewsBlock = ^(NewsModel *model) {
+        [self performSegueWithIdentifier:@"SearchToNewsSegue" sender:model];
+    };
 
     self.viewControllerArray = @[blogger, blog, news];
     self.titleArray = @[NSLocalizedString(@"博主", @""), NSLocalizedString(@"博客", @""), NSLocalizedString(@"新闻", @"")];
